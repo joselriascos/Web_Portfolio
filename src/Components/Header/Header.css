@@ -1,0 +1,142 @@
+.main-header {
+  background-color: transparent;
+  padding: 60px 40px;
+  height: 30vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.5s;
+}
+
+@media (max-width: 680px) {
+  .main-header {
+    flex-direction: column;
+    gap: 4svh;
+    padding-top: 5svh;
+  }
+}
+
+.header-name-column {
+  width: 50%;
+  height: 100%;
+
+  & > .background-decoration {
+    position: absolute;
+    top: -190px;
+    left: -200px;
+    width: 540px;
+    height: 520px;
+    background: radial-gradient(
+      ellipse closest-corner at 50% 42%,
+      var(--purple) 0%,
+      transparent 50%
+    );
+  }
+
+  & > span {
+    color: var(--light-grey);
+    margin-left: 60px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -60%;
+      transform: translateY(-50%);
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: var(--white);
+      background: radial-gradient(
+        ellipse closest-corner at 50% 90%,
+        var(--purple) 0%,
+        var(--purple) 50%,
+        var(--white) 300%
+      );
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .header-name-column {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 1.1em;
+
+    & > .background-decoration {
+      top: -30%;
+      left: -30%;
+      width: 70%;
+      height: 100%;
+    }
+  }
+}
+
+.header-nav-column {
+  width: 50%;
+
+  & > ul {
+    width: 100%;
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    color: var(--white);
+
+    & > li {
+      padding: 0 20px;
+      transition: 0.4s;
+      height: 50%;
+
+      &:last-child {
+        font-weight: 800;
+        color: var(--light-purple);
+      }
+
+      &:hover,
+      &.active {
+        cursor: pointer;
+        color: var(--light-purple);
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .header-nav-column {
+    width: 100%;
+    height: auto;
+    
+    & > ul {
+      flex-direction: column;
+      text-align: center;
+      gap: 3svh;
+    }
+  }
+}
+
+@media (max-width: 835px) {
+  .header-nav-column {
+    & > ul {
+      & > li {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s;
+}

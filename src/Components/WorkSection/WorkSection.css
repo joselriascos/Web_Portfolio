@@ -1,0 +1,17 @@
+.work-section{
+    margin-top: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > .example{
+        margin-top: 50px;
+        height: 100vh;
+        border: 1px solid white;
+
+        &.put-closer{
+            margin-top: 20px;
+            transition: .6s;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+:root {
+  font-family: 'Playfair Display', serif;
+  --purple: #2a1364;
+  --black: #000000;
+  --light-purple: #776a97;
+  --white: #e1e5ef;
+  --light-grey: #d1d3e2;
+}
+
+body {
+  background-color: var(--black);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,1 @@
+Proyecto del medio con más margen usando selector CSS nth-child (expresión cada 3 empezando por el segundo)

@@ -1,0 +1,41 @@
+.main-footer{
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    font-weight: 400;
+    font-size: .9em;
+
+    & > p > a{
+        color: var(--white);
+        text-underline-offset: 2px;
+    }
+    
+
+    & > .icon-container{
+        width: 70px;
+        height: 70px;
+        background-color: transparent;
+        padding: 15px;
+
+        & > svg {
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .main-footer {
+        flex-direction: column;
+
+        & > p{
+            order: 2;
+        }
+
+        & > .icon-container{
+            order: 1;
+        }
+    }
+}
