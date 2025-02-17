@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
+import { MOBILE_WIDTH } from '../utils/consts'
 
 export function useHeader() {
   const [shouldBeVisible, setShouldBeVisible] = useState(true)
@@ -25,10 +26,13 @@ export function useHeader() {
         .querySelector('.work-section .title')
         .getBoundingClientRect().top
 
-      const isBelowTitle = isTouch
-        ? currentScrollY > titlePosY - 200
-        : currentScrollY >= titlePosY
+      const isBelowTitle =
+        isTouch && window.innerWidth < MOBILE_WIDTH
+          ? currentScrollY > titlePosY - 200
+          : currentScrollY >= titlePosY
       const isAboveTitle = currentScrollY < titlePosY
+
+      const speedLimit = isTouch ? 2 : 2.5
 
       // Scroll down
       if (deltaY > 0) {
@@ -39,7 +43,7 @@ export function useHeader() {
       } else {
         if (isAboveTitle) {
           setShouldBeVisible(true)
-        } else if (scrollSpeed > 2.5) {
+        } else if (scrollSpeed > speedLimit) {
           setShouldBeVisible(true)
         }
       }

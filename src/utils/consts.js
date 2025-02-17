@@ -12,3 +12,5 @@ export const IL18N = {
     contact: 'Contacto',
   },
 }
+
+export const MOBILE_WIDTH = 680

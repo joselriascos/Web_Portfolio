@@ -52,7 +52,7 @@
       border-radius: 50%;
       background: var(--white);
       background: radial-gradient(
-        ellipse closest-corner at 50% 90%,
+        ellipse closest-corner at 17px 31px,
         var(--purple) 0%,
         var(--purple) 50%,
         var(--white) 300%

@@ -7,7 +7,7 @@ export function Footer() {
     <section className="main-footer">
       <p>
         Coded by:{' '}
-        <a href="https://github.com/joselriascos" target="_blank">
+        <a href="https://github.com/joselriascos/Web_Portfolio" target="_blank">
           joselRiascos
         </a>
       </p>
