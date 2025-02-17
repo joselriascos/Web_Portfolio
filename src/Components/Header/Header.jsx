@@ -2,11 +2,39 @@ import './Header.css'
 import { ObservedAnimatedComponent } from '../ObservedAnimatedComponent'
 import { useHeader } from '../../hooks/useHeader'
 import { useAppContext } from '../../hooks/useAppContext'
-import { IL18N } from '../../utils/consts'
+import { IL18N, MOBILE_WIDTH } from '../../utils/consts'
 import { scrollTop } from '../../utils/functions'
+import { OpenCloseMenu } from './OpenCloseMenu'
 
-export function Header() {
-  const { shouldBeVisible } = useHeader()
+function MobileHeader() {
+  const { shouldBeVisible, headerAboveTitle } = useHeader()
+
+  const handleHomeClick = () => {
+    scrollTop()
+  }
+
+  return (
+    <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
+      <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
+        <div className="header-name-column">
+          <div className="background-decoration" />
+          <span
+            className={shouldBeVisible && !headerAboveTitle ? 'visible' : ''}
+            onClick={handleHomeClick}
+          >
+            Jose Riascos
+          </span>
+        </div>
+        <div className="header-nav-column">
+          <OpenCloseMenu />
+        </div>
+      </header>
+    </ObservedAnimatedComponent>
+  )
+}
+
+function DesktopHeader() {
+  const { shouldBeVisible, headerAboveTitle } = useHeader()
   const { toggleLang, lang } = useAppContext()
   const il18n = IL18N[lang]
 
@@ -19,7 +47,12 @@ export function Header() {
       <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
         <div className="header-name-column">
           <div className="background-decoration" />
-          <span onClick={handleHomeClick}>Jose Riascos</span>
+          <span
+            className={shouldBeVisible && !headerAboveTitle ? 'visible' : ''}
+            onClick={handleHomeClick}
+          >
+            Jose Riascos
+          </span>
         </div>
         <div className="header-nav-column">
           <ul>
@@ -32,4 +65,10 @@ export function Header() {
       </header>
     </ObservedAnimatedComponent>
   )
+}
+
+export function Header() {
+  const { deviceWidth } = useAppContext()
+
+  return deviceWidth <= MOBILE_WIDTH ? MobileHeader() : DesktopHeader()
 }

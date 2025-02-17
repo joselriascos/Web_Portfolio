@@ -3,6 +3,7 @@ import { MOBILE_WIDTH } from '../utils/consts'
 
 export function useHeader() {
   const [shouldBeVisible, setShouldBeVisible] = useState(true)
+  const [headerAboveTitle, setHeaderAboveTitle] = useState(true)
   const lastScrollY = useRef(window.scrollY)
   const lastTime = useRef(Date.now())
 
@@ -12,7 +13,10 @@ export function useHeader() {
   }, [window, navigator])
 
   /* Checks if the user has scrolled up or down fast to show or hide the header
-  Also checks if the user has scrolled above or below the next section */
+  Also checks if the user has scrolled above or below the next section.
+  In the same way, ir checks if the user has scrolled above or below the title and sets
+  the headerAboveTitle state accordingly -> it will be used to hide the small title in the header
+  */
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -31,6 +35,7 @@ export function useHeader() {
           ? currentScrollY > titlePosY - 200
           : currentScrollY >= titlePosY
       const isAboveTitle = currentScrollY < titlePosY
+      setHeaderAboveTitle(isAboveTitle ? true : false)
 
       const speedLimit = isTouch ? 2 : 2.5
 
@@ -56,5 +61,5 @@ export function useHeader() {
     return () => window.removeEventListener('scroll', handleScroll)
   })
 
-  return { shouldBeVisible }
+  return { shouldBeVisible, headerAboveTitle }
 }
