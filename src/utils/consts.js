@@ -4,12 +4,14 @@ export const IL18N = {
     myWork: 'My work',
     aboutMe: 'About me',
     contact: 'Contact',
+    subtitle: 'Web Developer',
   },
   es: {
     language: 'ES',
     myWork: 'Mi trabajo',
     aboutMe: 'Sobre mí',
     contact: 'Contacto',
+    subtitle: 'Desarrollador Web',
   },
 }
 

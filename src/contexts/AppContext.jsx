@@ -3,8 +3,13 @@ import { createContext, useEffect, useState } from 'react'
 export const AppContext = createContext()
 
 export function AppContextProvider({ children }) {
-  const [lang, setLang] = useState('en')
+  const [lang, setLang] = useState(window.localStorage.getItem('lang') || 'en')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [deviceWidth, setDeviceWidth] = useState(window.innerWidth)
+
+  const toggleIsMenuOpen = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   const toggleLang = () => {
     setLang(lang === 'en' ? 'es' : 'en')
@@ -12,8 +17,12 @@ export function AppContextProvider({ children }) {
 
   useEffect(() => {
     document.title = lang === 'en' ? 'Web Portfolio' : 'Portafolio Web'
+    window.localStorage.setItem('lang', lang)
 
-    return () => (document.title = 'Web Portfolio')
+    return () => {
+      document.title = 'Web Portfolio'
+      window.localStorage.removeItem('lang')
+    }
   }, [lang])
 
   useEffect(() => {
@@ -24,7 +33,7 @@ export function AppContextProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ lang, toggleLang, deviceWidth }}
+      value={{ lang, toggleLang, deviceWidth, isMenuOpen, toggleIsMenuOpen }}
     >
       {children}
     </AppContext.Provider>

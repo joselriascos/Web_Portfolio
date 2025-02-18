@@ -1,18 +1,16 @@
 import { useDisableScroll } from '../../hooks/useDisableScroll'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N } from '../../utils/consts'
-import { useState } from 'react'
 
 export function OpenCloseMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { lang, toggleLang } = useAppContext()
+  const { lang, toggleLang, isMenuOpen, toggleIsMenuOpen } = useAppContext()
   const il18n = IL18N[lang]
   useDisableScroll({ isMenuOpen })
 
   return (
     <div className="menu-container">
       <div
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        onClick={toggleIsMenuOpen}
         className={`open-close-menu ${isMenuOpen ? 'open-menu' : ''}`}
       >
         {[...Array(9)].map((_, index) => (
