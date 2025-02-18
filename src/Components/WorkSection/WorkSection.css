@@ -1,5 +1,5 @@
 .work-section{
-    margin-top: 40vh;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +11,7 @@
 
         &.put-closer{
             margin-top: 20px;
-            transition: .6s;
+            transition: 1s;
         }
     }
 }

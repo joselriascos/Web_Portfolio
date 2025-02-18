@@ -1,4 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 export const AppContext = createContext()
 
@@ -16,15 +16,16 @@ export function AppContextProvider({ children }) {
     return () => (document.title = 'Web Portfolio')
   }, [lang])
 
-  useEffect(()=>{
+  useEffect(() => {
     const handleResize = () => setDeviceWidth(window.innerWidth)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-
   return (
-    <AppContext.Provider value={{ lang, toggleLang, deviceWidth }}>
+    <AppContext.Provider
+      value={{ lang, toggleLang, deviceWidth }}
+    >
       {children}
     </AppContext.Provider>
   )

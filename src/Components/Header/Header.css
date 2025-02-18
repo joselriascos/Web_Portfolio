@@ -34,6 +34,8 @@
     position: relative;
     cursor: pointer;
     opacity: 0;
+    padding: 10px;
+    padding-left: 0;
     transition: 0.3s;
 
     &.visible {
@@ -42,6 +44,7 @@
 
     &::after {
       content: '';
+      padding: 0;
       position: absolute;
       top: 50%;
       left: -60%;
@@ -108,7 +111,7 @@
   top: 50px;
   grid-template-columns: repeat(5, 8px);
   grid-template-rows: repeat(5, 8px);
-  z-index: 20;
+  z-index: 100;
 
   & > .dot {
     width: 8px;
@@ -189,7 +192,7 @@
   width: 100dvw;
   height: 100dvh;
   background-color: var(--black);
-  z-index: 10;
+  z-index: 99;
   display: grid;
   place-content: center;
   padding-bottom: 50px;
@@ -223,7 +226,8 @@
 @media (max-width: 680px) {
   .main-header .header-name-column {
     & > span {
-      font-size: 1.2em;
+      font-size: 1em;
+      padding: 0;
 
       &::after {
         left: -50%;
