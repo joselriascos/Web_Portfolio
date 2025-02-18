@@ -36,7 +36,6 @@ export function useHeader() {
           : currentScrollY >= titlePosY + 200
       const isAboveTitle = !isBelowTitle
       setHeaderAboveTitle(isAboveTitle ? true : false)
-      console.log(isBelowTitle)
 
       const speedLimit = isTouch ? 1.8 : 2.7
 

@@ -12,8 +12,12 @@
   text-align: center;
 }
 
-.main-title.fade-in {
+.title.fade-in {
   animation: fadeIn 1.5s;
+}
+
+.title.fade-out{
+  animation: fadeOut 1.5s;
 }
 
 :root {
