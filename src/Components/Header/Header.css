@@ -215,10 +215,10 @@
 
 @media (max-width: 680px) {
   .main-header{
-    height: 15dvh;
+    height: 15svh;
     padding: 60px 0;
   }
-  
+
   .main-header .header-name-column {
 
     & > span {

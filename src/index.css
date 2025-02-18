@@ -35,7 +35,7 @@ body {
       overflow: visible;
       top: -70px;
       left: -250px;
-      width: 100%;
+      width: 500px;
       height: 200px;
       background: radial-gradient(
         ellipse closest-corner at 50% 42%,
