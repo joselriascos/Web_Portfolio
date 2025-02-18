@@ -8,7 +8,7 @@ import { IL18N } from '../../utils/consts'
 export function Title() {
   const textRef = useRef(null)
   const { isMenuOpen, lang } = useAppContext()
-  const { handleMouseLeave, handleMouseMove } = useTitle({ textRef })
+  const { handleMouseLeave, handleMouseMove, handleTouch } = useTitle({ textRef })
   const il18n = IL18N[lang]
 
   return (
@@ -19,6 +19,7 @@ export function Title() {
             ref={textRef}
             onPointerMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouch}
             className="text-gradient"
           >
             Jose Riascos

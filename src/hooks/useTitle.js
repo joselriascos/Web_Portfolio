@@ -23,5 +23,19 @@ export function useTitle({ textRef }) {
     }
   }
 
-  return { handleMouseLeave, handleMouseMove }
+  const handleTouch = (e) => {
+    if (!textRef.current) return
+
+    const { clientX, clientY } = e.touches[0]
+    const { left, top, width, height } = textRef.current.getBoundingClientRect()
+
+    const x = ((clientX - left) / width) * 100
+    const y = ((clientY - top) / height) * 100
+
+    textRef.current.style.setProperty('--x', `${x}%`)
+    textRef.current.style.setProperty('--y', `${y}%`)
+    textRef.current.style.setProperty('--color', 'rgba(255, 255, 255, 0.8)')
+  }
+
+  return { handleMouseLeave, handleMouseMove, handleTouch }
 }
