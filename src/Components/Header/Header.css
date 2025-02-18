@@ -232,6 +232,7 @@
   }
   .main-header .header-name-column {
     & > .background-decoration {
+      overflow: visible;
       top: -70px;
       left: -250px;
       width: 600px;
@@ -239,7 +240,7 @@
       background: radial-gradient(
         ellipse closest-corner at 50% 42%,
         var(--purple) 0%,
-        transparent 50%
+        transparent 30%
       );
     }
 
