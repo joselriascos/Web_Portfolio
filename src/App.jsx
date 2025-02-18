@@ -7,6 +7,7 @@ import { WorkSection } from './Components/WorkSection/WorkSection'
 function App() {
   return (
     <div className="app">
+      <div className="background-decoration" />
       <Header />
       <Title />
       <WorkSection />

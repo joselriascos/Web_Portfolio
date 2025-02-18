@@ -17,7 +17,7 @@ export function Title() {
         <div className="main-title">
           <h1
             ref={textRef}
-            onPointerMove={handleMouseMove}
+            onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
             className="text-gradient"

@@ -17,7 +17,6 @@ function MobileHeader() {
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
       <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
         <div className="header-name-column">
-          <div className="background-decoration" />
           <span
             className={shouldBeVisible && !headerAboveTitle ? 'visible' : ''}
             onClick={handleHomeClick}
@@ -46,7 +45,6 @@ function DesktopHeader() {
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
       <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
         <div className="header-name-column">
-          <div className="background-decoration" />
           <span
             className={shouldBeVisible && !headerAboveTitle ? 'visible' : ''}
             onClick={handleHomeClick}

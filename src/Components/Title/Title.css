@@ -1,12 +1,19 @@
-.title{
-  padding-top: 30vh;
+:root {
+  --x: 50%;
+  --y: 50%;
+  --color: transparent;
+}
+
+.title {
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.title.send-to-back{
-    z-index: -1;
+.title.send-to-back {
+  z-index: -1;
 }
 
 .main-title {
@@ -14,23 +21,19 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  height: auto;
   color: var(--white);
   text-align: center;
+  height: 40%;
+  width: 100%;
 }
 
 .title.fade-in {
   animation: fadeIn 1.5s;
 }
 
-.title.fade-out{
+.title.fade-out {
   animation: fadeOut 0.3s;
-}
-
-:root {
-  --x: 50%;
-  --y: 50%;
-  --color: transparent;
 }
 
 .text-gradient,
@@ -67,22 +70,24 @@
   text-align: center;
   font-size: 3em;
   color: var(--purple);
-  margin: 70px 0 200px 0;
   filter: blur(0.012em);
   cursor: default;
 }
 
 @media (max-width: 1100px) {
+  .title {
+    gap: 20px;
+  }
+
   .main-title {
-    height: 480px;
     width: 90%;
-    margin: auto;
+    margin-top: 25%;
   }
 
   .text-gradient,
   .fixed-text {
     letter-spacing: 0.1em;
-    line-height: 1.2em;
+    line-height: 1em;
     margin-top: -90px;
   }
 
@@ -92,21 +97,23 @@
 }
 
 @media (max-width: 680px) {
-  .title{
-    height: 85dvh;
+  .title {
+    height: 100dvh;
+    gap: 0;
   }
 
-    .main-title{
-        height: 30vh;
-    }
-    .text-gradient,
-    .fixed-text {
-        letter-spacing: .03em;
-        line-height: 1.1em;
-        font-size: 5em;
-    }
+  .main-title {
+    margin: 0;
+    padding-top: 20%;
+  }
+  .text-gradient,
+  .fixed-text {
+    letter-spacing: 0.03em;
+    line-height: 1.1em;
+    font-size: 4.5em;
+  }
 
-    .title > h2{
-        font-size: 2em;
-    }
+  .title > h2 {
+    font-size: 2em;
+  }
 }

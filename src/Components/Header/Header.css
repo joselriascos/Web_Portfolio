@@ -16,19 +16,6 @@
   width: 50%;
   height: 100%;
 
-  & > .background-decoration {
-    position: absolute;
-    top: -190px;
-    left: -200px;
-    width: 540px;
-    height: 520px;
-    background: radial-gradient(
-      ellipse closest-corner at 50% 42%,
-      var(--purple) 0%,
-      transparent 50%
-    );
-  }
-
   & > span {
     color: var(--light-grey);
     margin-left: 60px;
@@ -229,20 +216,10 @@
 @media (max-width: 680px) {
   .main-header{
     height: 15dvh;
+    padding: 60px 0;
   }
+  
   .main-header .header-name-column {
-    & > .background-decoration {
-      overflow: visible;
-      top: -70px;
-      left: -250px;
-      width: 600px;
-      height: 200px;
-      background: radial-gradient(
-        ellipse closest-corner at 50% 42%,
-        var(--purple) 0%,
-        transparent 30%
-      );
-    }
 
     & > span {
       font-size: 1em;

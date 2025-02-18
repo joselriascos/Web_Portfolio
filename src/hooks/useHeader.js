@@ -27,7 +27,7 @@ export function useHeader() {
       const scrollSpeed = Math.abs(deltaY / deltaTime)
 
       const titlePosY = document
-        .querySelector('.work-section .title')
+        .querySelector('.app .title')
         .getBoundingClientRect().top
 
       const isBelowTitle =
