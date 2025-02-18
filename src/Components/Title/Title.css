@@ -17,7 +17,7 @@
 }
 
 .title.fade-out{
-  animation: fadeOut 1.5s;
+  animation: fadeOut 0.3s;
 }
 
 :root {

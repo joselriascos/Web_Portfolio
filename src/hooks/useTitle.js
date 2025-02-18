@@ -26,6 +26,7 @@ export function useTitle({ textRef }) {
   /* Simulates touch on touch devices */
   const handleClick = (e) => {
     if (!textRef.current) return
+    e.preventDefault()
 
     const { clientX, clientY } = e
     const { left, top, width, height } = textRef.current.getBoundingClientRect()

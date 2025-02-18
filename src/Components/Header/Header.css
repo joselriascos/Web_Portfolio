@@ -226,7 +226,23 @@
 }
 
 @media (max-width: 680px) {
+  .main-header{
+    height: 15dvh;
+    z-index: 9999;
+  }
   .main-header .header-name-column {
+    & > .background-decoration {
+      top: -70px;
+      left: -250px;
+      width: 600px;
+      height: 200px;
+      background: radial-gradient(
+        ellipse closest-corner at 50% 42%,
+        var(--purple) 0%,
+        transparent 50%
+      );
+    }
+
     & > span {
       font-size: 1em;
       padding: 0;
