@@ -23,19 +23,21 @@ export function useTitle({ textRef }) {
     }
   }
 
-  const handleTouch = (e) => {
+  /* Simulates touch on touch devices */
+  const handleClick = (e) => {
     if (!textRef.current) return
 
-    const { clientX, clientY } = e.touches[0]
+    const { clientX, clientY } = e
     const { left, top, width, height } = textRef.current.getBoundingClientRect()
 
-    const x = ((clientX - left) / width) * 100
-    const y = ((clientY - top) / height) * 100
+    const x = clientX - left
+    const y = clientY - top
+    const color = `rgb(${(x / width) * 255}, ${(y / height) * 255}, 250)`
 
-    textRef.current.style.setProperty('--x', `${x}%`)
-    textRef.current.style.setProperty('--y', `${y}%`)
-    textRef.current.style.setProperty('--color', 'rgba(255, 255, 255, 0.8)')
+    textRef.current.style.setProperty('--x', `${(x / width) * 100}%`)
+    textRef.current.style.setProperty('--y', `${(y / height) * 100}%`)
+    textRef.current.style.setProperty('--color', color)
   }
 
-  return { handleMouseLeave, handleMouseMove, handleTouch }
+  return { handleMouseLeave, handleMouseMove, handleClick }
 }

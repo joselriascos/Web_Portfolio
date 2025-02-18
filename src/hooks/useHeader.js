@@ -32,12 +32,13 @@ export function useHeader() {
 
       const isBelowTitle =
         isTouch && window.innerWidth < MOBILE_WIDTH
-          ? currentScrollY > titlePosY - 200
-          : currentScrollY >= titlePosY
-      const isAboveTitle = currentScrollY < titlePosY
+          ? currentScrollY > titlePosY + 100
+          : currentScrollY >= titlePosY + 200
+      const isAboveTitle = !isBelowTitle
       setHeaderAboveTitle(isAboveTitle ? true : false)
+      console.log(isBelowTitle)
 
-      const speedLimit = isTouch ? 2 : 2.5
+      const speedLimit = isTouch ? 1.8 : 2.7
 
       // Scroll down
       if (deltaY > 0) {
