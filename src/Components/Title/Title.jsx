@@ -19,7 +19,7 @@ export function Title() {
             ref={textRef}
             onPointerMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouch}
+            // onTouchStart={handleTouch}
             className="text-gradient"
           >
             Jose Riascos
