@@ -9,6 +9,7 @@
   left: 0;
   width: 100%;
   transition: 0.5s;
+  z-index: 9999;
 }
 
 .main-header .header-name-column {
@@ -228,7 +229,6 @@
 @media (max-width: 680px) {
   .main-header{
     height: 15dvh;
-    z-index: 9999;
   }
   .main-header .header-name-column {
     & > .background-decoration {
