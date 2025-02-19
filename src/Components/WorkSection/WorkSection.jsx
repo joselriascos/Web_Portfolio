@@ -6,8 +6,8 @@ import { Project } from '../Project/Project'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N } from '../../utils/consts'
 
-// const projectsDouble = projects.concat(projects)
-const projectsDouble = products
+const projectsDouble = projects.concat(projects)
+// const projectsDouble = products
 
 export function WorkSection() {
   const { lang } = useAppContext()

@@ -3,8 +3,8 @@ import { useAppContext } from '../../hooks/useAppContext'
 import './Project.css'
 
 export function Project({ project }) {
-  // const { title, image_path } = project
-  const {title, images} = project
+  const { title, image_path } = project
+  // const {title, images} = project
   const { lang } = useAppContext()
 
   //TODO: Redirect to route to show project info
@@ -21,9 +21,9 @@ export function Project({ project }) {
       classIfNotVisible="hidden"
     >
       <div className="project" onClick={handleClick}>
-        <img src={images[0]} alt={title} />
+        <img src={image_path} alt={title[lang]} />
         <div className="hidden-link">
-          <span>{title}</span>
+          <span>{title[lang]}</span>
         </div>
       </div>
     </ObservedAnimatedComponent>

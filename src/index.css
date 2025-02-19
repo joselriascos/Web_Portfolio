@@ -16,7 +16,7 @@ body {
   background-color: var(--black);
 
   & > #root > .app > .background-decoration {
-    position: absolute;
+    position: fixed;
     top: -190px;
     left: -200px;
     width: 540px;

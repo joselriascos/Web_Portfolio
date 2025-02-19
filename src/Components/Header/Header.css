@@ -22,12 +22,14 @@
     position: relative;
     cursor: pointer;
     opacity: 0;
+    visibility: hidden;
     padding: 10px;
     padding-left: 0;
     transition: 0.3s;
 
     &.visible {
       opacity: 1;
+      visibility: visible;
     }
 
     &::after {
