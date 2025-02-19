@@ -93,19 +93,24 @@
 }
 
 /* Mobile */
+
+:root {
+  --open-menu-size: 6px;
+}
+
 .open-close-menu {
   display: grid;
   font-size: 2em;
   position: absolute;
   right: 20px;
   top: 50px;
-  grid-template-columns: repeat(5, 8px);
-  grid-template-rows: repeat(5, 8px);
+  grid-template-columns: repeat(5, var(--open-menu-size));
+  grid-template-rows: repeat(5, var(--open-menu-size));
   z-index: 100;
 
   & > .dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: white;
     border-radius: 50%;
     transition: 0.5s ease;
@@ -158,19 +163,28 @@
 
   &.open-menu > .dot {
     &:nth-child(2) {
-      transform: translate(-8px, 8px);
+      transform: translate(
+        calc(-1 * var(--open-menu-size)),
+        var(--open-menu-size)
+      );
     }
 
     &:nth-child(4) {
-      transform: translate(8px, 8px);
+      transform: translate(var(--open-menu-size), var(--open-menu-size));
     }
 
     &:nth-child(6) {
-      transform: translate(-8px, -8px);
+      transform: translate(
+        calc(-1 * var(--open-menu-size)),
+        calc(-1 * var(--open-menu-size))
+      );
     }
 
     &:nth-child(8) {
-      transform: translate(8px, -8px);
+      transform: translate(
+        var(--open-menu-size),
+        calc(-1 * var(--open-menu-size))
+      );
     }
   }
 }
