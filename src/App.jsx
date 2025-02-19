@@ -1,16 +1,16 @@
 import './App.css'
 import { Footer } from './Components/Footer/Footer'
 import { Header } from './Components/Header/Header'
-import { Title } from './Components/Title/Title'
-import { WorkSection } from './Components/WorkSection/WorkSection'
+import { Outlet } from 'react-router'
 
 function App() {
   return (
     <div className="app">
       <div className="background-decoration" />
       <Header />
-      <Title />
-      <WorkSection />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   )

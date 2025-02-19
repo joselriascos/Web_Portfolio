@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 import { MOBILE_WIDTH } from '../utils/consts'
+import { useLocation } from 'react-router'
 
 export function useHeader() {
   const [shouldBeVisible, setShouldBeVisible] = useState(true)
   const [headerAboveTitle, setHeaderAboveTitle] = useState(true)
+  const location = useLocation()
   const lastScrollY = useRef(window.scrollY)
   const lastTime = useRef(Date.now())
 
@@ -18,48 +20,50 @@ export function useHeader() {
   the headerAboveTitle state accordingly -> it will be used to hide the small title in the header
   */
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      const currentTime = Date.now()
-      const deltaY = currentScrollY - lastScrollY.current
-      const deltaTime = currentTime - lastTime.current
+    if (location.pathname === '/') {
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY
+        const currentTime = Date.now()
+        const deltaY = currentScrollY - lastScrollY.current
+        const deltaTime = currentTime - lastTime.current
 
-      const scrollSpeed = Math.abs(deltaY / deltaTime)
+        const scrollSpeed = Math.abs(deltaY / deltaTime)
 
-      const titlePosY = document
-        .querySelector('.app .title')
-        .getBoundingClientRect().top
+        const titlePosY = document
+          .querySelector('.app .title')
+          .getBoundingClientRect().top
 
-      const isBelowTitle =
-        isTouch && window.innerWidth < MOBILE_WIDTH
-          ? currentScrollY > titlePosY + 100
-          : currentScrollY >= titlePosY + 200
-      const isAboveTitle = !isBelowTitle
-      setHeaderAboveTitle(isAboveTitle ? true : false)
+        const isBelowTitle =
+          isTouch && window.innerWidth < MOBILE_WIDTH
+            ? currentScrollY > titlePosY + 100
+            : currentScrollY >= titlePosY + 200
+        const isAboveTitle = !isBelowTitle
+        setHeaderAboveTitle(isAboveTitle ? true : false)
 
-      const speedLimit = isTouch ? 1.8 : 2.7
+        const speedLimit = isTouch ? 1.8 : 2.7
 
-      // Scroll down
-      if (deltaY > 0) {
-        if (isBelowTitle) {
-          setShouldBeVisible(false)
+        // Scroll down
+        if (deltaY > 0) {
+          if (isBelowTitle) {
+            setShouldBeVisible(false)
+          }
+          //Scroll up
+        } else {
+          if (isAboveTitle) {
+            setShouldBeVisible(true)
+          } else if (scrollSpeed > speedLimit) {
+            setShouldBeVisible(true)
+          }
         }
-        //Scroll up
-      } else {
-        if (isAboveTitle) {
-          setShouldBeVisible(true)
-        } else if (scrollSpeed > speedLimit) {
-          setShouldBeVisible(true)
-        }
+
+        lastScrollY.current = currentScrollY
+        lastTime.current = currentTime
       }
 
-      lastScrollY.current = currentScrollY
-      lastTime.current = currentTime
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  })
+  }, [location.pathname, isTouch])
 
   return { shouldBeVisible, headerAboveTitle }
 }
