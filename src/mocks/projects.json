@@ -1,0 +1,67 @@
+{
+  "projects": [
+    {
+      "title": "Personal CV",
+      "description": "TODO",
+      "image_path": "/images/Personal-CV-icon.jpg",
+      "github_url": "https://github.com/joselriascos/Personal_CV",
+      "site_url": "https://joselriascos.vercel.app/"
+    },
+    {
+      "title": "Pokemon searcher",
+      "description": "TODO",
+      "image_path": "/images/Pokemon-searcher-icon.webp",
+      "github_url": "https://github.com/joselriascos/pokemon_searcher",
+      "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
+    },
+    {
+      "title": "Random quote machine",
+      "description": "TODO",
+      "image_path": "/images/Random-quote-machine-icon.jpg",
+      "github_url": "https://github.com/joselriascos/random-quote-machine",
+      "site_url": "https://joselriascos.github.io/random-quote-machine/"
+    },
+    {
+      "title": "Random quote machine",
+      "description": "TODO",
+      "image_path": "/images/Random-quote-machine-icon.jpg",
+      "github_url": "https://github.com/joselriascos/random-quote-machine",
+      "site_url": "https://joselriascos.github.io/random-quote-machine/"
+    },
+    {
+      "title": "Personal CV",
+      "description": "TODO",
+      "image_path": "/images/Personal-CV-icon.jpg",
+      "github_url": "https://github.com/joselriascos/Personal_CV",
+      "site_url": "https://joselriascos.vercel.app/"
+    },
+    {
+      "title": "Pokemon searcher",
+      "description": "TODO",
+      "image_path": "/images/Pokemon-searcher-icon.webp",
+      "github_url": "https://github.com/joselriascos/pokemon_searcher",
+      "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
+    },
+    {
+      "title": "Pokemon searcher",
+      "description": "TODO",
+      "image_path": "/images/Pokemon-searcher-icon.webp",
+      "github_url": "https://github.com/joselriascos/pokemon_searcher",
+      "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
+    },
+    {
+      "title": "Random quote machine",
+      "description": "TODO",
+      "image_path": "/images/Random-quote-machine-icon.jpg",
+      "github_url": "https://github.com/joselriascos/random-quote-machine",
+      "site_url": "https://joselriascos.github.io/random-quote-machine/"
+    },
+    {
+      "title": "Personal CV",
+      "description": "TODO",
+      "image_path": "/images/Personal-CV-icon.jpg",
+      "github_url": "https://github.com/joselriascos/Personal_CV",
+      "site_url": "https://joselriascos.vercel.app/"
+    }
+  ]
+}
