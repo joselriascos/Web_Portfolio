@@ -5,6 +5,7 @@ export const IL18N = {
     aboutMe: 'About me',
     contact: 'Contact',
     subtitle: 'Web Developer',
+    projects: 'Projects',
   },
   es: {
     language: 'ES',
@@ -12,6 +13,7 @@ export const IL18N = {
     aboutMe: 'Sobre mí',
     contact: 'Contacto',
     subtitle: 'Desarrollador Web',
+    projects: 'Proyectos',
   },
 }
 

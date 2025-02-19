@@ -1,64 +1,118 @@
 {
   "projects": [
     {
-      "title": "Personal CV",
-      "description": "TODO",
+      "title": {
+        "en": "Personal CV",
+        "es": "CV Personal"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Personal-CV-icon.jpg",
       "github_url": "https://github.com/joselriascos/Personal_CV",
       "site_url": "https://joselriascos.vercel.app/"
     },
     {
-      "title": "Pokemon searcher",
-      "description": "TODO",
+      "title": {
+        "en": "Pokemon searcher",
+        "es": "Pokemon searcher"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Pokemon-searcher-icon.webp",
       "github_url": "https://github.com/joselriascos/pokemon_searcher",
       "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
     },
     {
-      "title": "Random quote machine",
-      "description": "TODO",
+      "title": {
+        "en": "Random quote machine",
+        "es": "Máquina de citas aleatorias"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Random-quote-machine-icon.jpg",
       "github_url": "https://github.com/joselriascos/random-quote-machine",
       "site_url": "https://joselriascos.github.io/random-quote-machine/"
     },
     {
-      "title": "Random quote machine",
-      "description": "TODO",
+      "title": {
+        "en": "Random quote machine",
+        "es": "Máquina de citas aleatorias"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Random-quote-machine-icon.jpg",
       "github_url": "https://github.com/joselriascos/random-quote-machine",
       "site_url": "https://joselriascos.github.io/random-quote-machine/"
     },
     {
-      "title": "Personal CV",
-      "description": "TODO",
+      "title": {
+        "en": "Personal CV",
+        "es": "CV Personal"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Personal-CV-icon.jpg",
       "github_url": "https://github.com/joselriascos/Personal_CV",
       "site_url": "https://joselriascos.vercel.app/"
     },
     {
-      "title": "Pokemon searcher",
-      "description": "TODO",
+      "title": {
+        "en": "Pokemon searcher",
+        "es": "Pokemon searcher"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Pokemon-searcher-icon.webp",
       "github_url": "https://github.com/joselriascos/pokemon_searcher",
       "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
     },
     {
-      "title": "Pokemon searcher",
-      "description": "TODO",
+      "title": {
+        "en": "Pokemon searcher",
+        "es": "Pokemon searcher"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Pokemon-searcher-icon.webp",
       "github_url": "https://github.com/joselriascos/pokemon_searcher",
       "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
     },
     {
-      "title": "Random quote machine",
-      "description": "TODO",
+      "title": {
+        "en": "Random quote machine",
+        "es": "Máquina de citas aleatorias"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Random-quote-machine-icon.jpg",
       "github_url": "https://github.com/joselriascos/random-quote-machine",
       "site_url": "https://joselriascos.github.io/random-quote-machine/"
     },
     {
-      "title": "Personal CV",
-      "description": "TODO",
+      "title": {
+        "en": "Personal CV",
+        "es": "CV Personal"
+      },
+      "description": {
+        "en": "TODO",
+        "es": "TODO"
+      },
       "image_path": "/images/Personal-CV-icon.jpg",
       "github_url": "https://github.com/joselriascos/Personal_CV",
       "site_url": "https://joselriascos.vercel.app/"

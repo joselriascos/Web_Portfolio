@@ -1,16 +1,39 @@
-.work-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.work-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    & > .example{
-        margin-top: 50px;
-        height: 100vh;
-        border: 1px solid white;
+  & > .section {
+    margin-top: 80px;
+    /* border: 1px solid white; */
 
-        &.put-closer{
-            margin-top: 20px;
-            transition: 1s;
-        }
+    & > h1 {
+        color: var(--light-grey);
+        text-align: center;
+        padding: 0;
+        font-size: 4em;
+        font-weight: 500;
+        filter: brightness(60%);
+      }
+
+    &.put-closer {
+      margin-top: 50px;
+      transition: 1s;
     }
+  }
+
+  /* Projects */
+  & > .projects-section {
+
+    & > .projects-grid {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 27%));
+    }
+  }
+
+  /* Tecnologies */
+  & > .tools-section{
+    padding-top: 20px;
+  }
 }
