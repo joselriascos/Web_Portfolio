@@ -12,7 +12,7 @@ export function Title() {
   const il18n = IL18N[lang]
 
   return (
-    <ObservedAnimatedComponent threshold={0} classIfVisible="fade-in" classIfNotVisible='fade-out'>
+    <ObservedAnimatedComponent threshold={0} classIfVisible="fade-in">
       <div className={`title ${isMenuOpen ? 'send-to-back' : ''}`}>
         <div className="main-title">
           <h1

@@ -51,7 +51,8 @@ function DesktopHeader() {
         <div className="header-name-column">
           <span
             className={
-              shouldBeVisible && !headerAboveTitle || location.pathname !== '/'
+              (shouldBeVisible && !headerAboveTitle) ||
+              location.pathname !== '/'
                 ? 'visible'
                 : ''
             }
@@ -80,7 +81,7 @@ function DesktopHeader() {
 }
 
 export function Header() {
-  const { deviceWidth } = useAppContext()
+  const { deviceWidth } = useHeader()
 
-  return deviceWidth <= MOBILE_WIDTH ? MobileHeader() : DesktopHeader()
+  return deviceWidth <= MOBILE_WIDTH ? <MobileHeader /> : <DesktopHeader />
 }

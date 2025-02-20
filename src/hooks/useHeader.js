@@ -5,9 +5,17 @@ import { useLocation } from 'react-router'
 export function useHeader() {
   const [shouldBeVisible, setShouldBeVisible] = useState(true)
   const [headerAboveTitle, setHeaderAboveTitle] = useState(true)
+  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth)
   const location = useLocation()
   const lastScrollY = useRef(window.scrollY)
   const lastTime = useRef(Date.now())
+
+  // Detects changes in the window's width
+  useEffect(() => {
+    const handleResize = () => setDeviceWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Detects if the device is touch
   const isTouch = useMemo(() => {
@@ -65,5 +73,5 @@ export function useHeader() {
     }
   }, [location.pathname, isTouch])
 
-  return { shouldBeVisible, headerAboveTitle }
+  return { shouldBeVisible, headerAboveTitle, deviceWidth }
 }
