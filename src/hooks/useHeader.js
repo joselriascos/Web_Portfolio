@@ -28,13 +28,13 @@ export function useHeader() {
   the headerAboveTitle state accordingly -> it will be used to hide the small title in the header
   */
   useEffect(() => {
-    if (location.pathname === '/') {
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY
-        const currentTime = Date.now()
-        const deltaY = currentScrollY - lastScrollY.current
-        const deltaTime = currentTime - lastTime.current
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const currentTime = Date.now()
+      const deltaY = currentScrollY - lastScrollY.current
+      const deltaTime = currentTime - lastTime.current
 
+      if (location.pathname === '/') {
         const scrollSpeed = Math.abs(deltaY / deltaTime)
 
         const titlePosY = document
@@ -63,14 +63,21 @@ export function useHeader() {
             setShouldBeVisible(true)
           }
         }
-
-        lastScrollY.current = currentScrollY
-        lastTime.current = currentTime
+      } else {
+        //Scroll down
+        if (deltaY > 0) {
+          setShouldBeVisible(false)
+          //Scroll up
+        } else {
+          setShouldBeVisible(true)
+        }
       }
-
-      window.addEventListener('scroll', handleScroll)
-      return () => window.removeEventListener('scroll', handleScroll)
+      lastScrollY.current = currentScrollY
+      lastTime.current = currentTime
     }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [location.pathname, isTouch])
 
   return { shouldBeVisible, headerAboveTitle, deviceWidth }
