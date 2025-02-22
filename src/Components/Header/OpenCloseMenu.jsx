@@ -22,13 +22,22 @@ export function OpenCloseMenu() {
       {isMenuOpen && (
         <div className="menu">
           <ul>
-            <li className={location.pathname === '/' ? 'active' : ''}>
+            <li
+              onClick={toggleIsMenuOpen}
+              className={location.pathname === '/' ? 'active' : ''}
+            >
               <Link to="/">{il18n.myWork}</Link>
             </li>
-            <li className={location.pathname === '/about' ? 'active' : ''}>
+            <li
+              onClick={toggleIsMenuOpen}
+              className={location.pathname === '/about' ? 'active' : ''}
+            >
               <Link to="/about">{il18n.aboutMe}</Link>
             </li>
-            <li className={location.pathname === '/contact' ? 'active' : ''}>
+            <li
+              onClick={toggleIsMenuOpen}
+              className={location.pathname === '/contact' ? 'active' : ''}
+            >
               <Link to="contact">{il18n.contact}</Link>
             </li>
             <li onClick={toggleLang}>{il18n.language}</li>
