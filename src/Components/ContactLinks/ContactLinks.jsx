@@ -1,42 +1,68 @@
 import './ContactLinks.css'
-import { LinkedinIcon, GithubIcon, WhatsappIcon, MailIcon } from '../Icons'
+import {
+  LinkedinIcon,
+  GithubIcon,
+  WhatsappIcon,
+  MailIcon,
+  PhoneIcon,
+} from '../Icons'
 import { ContactLink } from './ContactLink'
+import { useAppContext } from '../../hooks/useAppContext'
+import { IL18N } from '../../utils/consts'
 
 export function ContactLinks() {
+  const { lang } = useAppContext()
+  const il18n = IL18N[lang]
+
+  const links = [
+    {
+      to: 'https://github.com/joselriascos',
+      icon: <GithubIcon />,
+      label: 'GitHub',
+      color: '#fdfdfd',
+    },
+    {
+      to: 'mailto:joseluis.riascos10@gmail.com',
+      icon: <MailIcon />,
+      label: il18n.email,
+      color: '#facddd',
+      newTab: false,
+    },
+    {
+      to: 'tel:573218797465',
+      icon: <PhoneIcon />,
+      label: il18n.phone,
+      color: '#7adec2',
+      newTab: false,
+    },
+    {
+      to: 'https://www.linkedin.com/in/jose-luis-riascos-cubillos-584367268/',
+      icon: <LinkedinIcon />,
+      label: 'LinkedIn',
+      color: '#0864c1',
+    },
+    {
+      to: 'https://wa.me/3218797465',
+      icon: <WhatsappIcon />,
+      label: 'WhatsApp',
+      color: '#0cc143',
+    },
+  ]
+
   return (
     <div className="contact-links">
-      <ContactLink
-        to="https://www.linkedin.com/in/jose-luis-riascos-cubillos-584367268/"
-        icon={<LinkedinIcon />}
-        label="LinkedIn"
-        color="#0864c1"
-      />
-      <ContactLink
-        to="https://github.com/joselriascos"
-        icon={<GithubIcon />}
-        label="GitHub"
-        color="#fdfdfd"
-      />
-      <ContactLink
-        to="https://wa.me/3218797465"
-        icon={<WhatsappIcon />}
-        label="WhatsApp"
-        color="#0cc143"
-      />
-      <ContactLink
-        to="mailto:joseluis.riascos10@gmail.com"
-        icon={<MailIcon />}
-        label="Email"
-        color="#facddd"
-        newTab={false}
-      />
-      <ContactLink
-        to="#"
-        icon={<MailIcon />}
-        label="Email 2"
-        color="#facddd"
-        newTab={false}
-      />
+      {links.map((link, index) => {
+        return (
+          <ContactLink
+            key={index}
+            to={link.to}
+            icon={link.icon}
+            label={link.label}
+            color={link.color}
+            newTab={link.newTab && link.newTab}
+          />
+        )
+      })}
     </div>
   )
 }

@@ -11,6 +11,8 @@ export const IL18N = {
     downloadCV: 'Download my CV',
     pageNotFound: 'Page not found',
     goBackHome: 'Go back home',
+    email: 'Email',
+    phone: 'Phone',
   },
   es: {
     language: 'ES',
@@ -24,6 +26,8 @@ export const IL18N = {
     downloadCV: 'Descarga mi CV',
     pageNotFound: 'Página no encontrada',
     goBackHome: 'Volver al inicio',
+    email: 'Correo',
+    phone: 'Teléfono',
   },
 }
 
