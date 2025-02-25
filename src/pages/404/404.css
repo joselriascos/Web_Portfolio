@@ -1,0 +1,43 @@
+.error-404-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  height: 82svh;
+  gap: 20px;
+  opacity: 0;
+
+  &.fade-in {
+    animation: fadeIn 2s forwards;
+  }
+
+  & > h1 {
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+  & > p {
+    font-size: 1.1em;
+  }
+
+  & > button {
+    width: max(20%, 200px);
+    margin-top: 20px;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 15px 20px;
+    border: none;
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 8px;
+    filter: brightness(90%);
+    transition: 0.3s;
+
+    &:hover {
+      filter: brightness(100%);
+      cursor: pointer;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import Home from '../pages/Home'
 import AboutMe from '../pages/AboutMe/AboutMe'
 import Contact from '../pages/Contact/Contact'
 import Project from '../pages/Project'
-import Error404 from '../pages/404'
+import Error404 from '../pages/404/404'
 
 export const router = createBrowserRouter([
   {

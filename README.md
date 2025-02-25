@@ -1,7 +1,7 @@
 - Estilar título de proyectos y tecnologías
 - Buscar favicon y favicons para proyectos
 - Buscar fuentes y tamaños para títulos
-- Poner Icono al cambio de idioma.
+- Poner Icono al cambio de idioma
 
 - OPCIONAL: poner tecnologías usadas en cada proyecto al hacer hover
 - OPCIONAL: podría poner el botón de cambiar idioma por fuera del menú en móviles
