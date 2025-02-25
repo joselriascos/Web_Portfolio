@@ -1,3 +1,4 @@
+/* hook to handle animations in title on hover and touch */
 export function useTitle({ textRef }) {
   const handleMouseMove = (e) => {
     const rect = e.target.getBoundingClientRect()
@@ -10,17 +11,21 @@ export function useTitle({ textRef }) {
     const xPercentage = Math.round((x / rect.width) * 100) + '%'
     const yPercentage = Math.round((y / rect.height) * 100) + '%'
 
-    if (textRef.current) {
-      textRef.current.style.setProperty('--x', xPercentage)
-      textRef.current.style.setProperty('--y', yPercentage)
-      textRef.current.style.setProperty('--color', color)
-    }
+    setTimeout(() => {
+      if (textRef.current) {
+        textRef.current.style.setProperty('--x', xPercentage)
+        textRef.current.style.setProperty('--y', yPercentage)
+        textRef.current.style.setProperty('--color', color)
+      }
+    }, 100)
   }
 
   const handleMouseLeave = () => {
-    if (textRef.current) {
-      textRef.current.style.setProperty('--color', 'transparent')
-    }
+    setTimeout(() => {
+      if (textRef.current) {
+        textRef.current.style.setProperty('--color', 'transparent')
+      }
+    }, 101)
   }
 
   /* Simulates touch on touch devices */

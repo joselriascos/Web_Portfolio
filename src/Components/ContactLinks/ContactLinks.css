@@ -1,0 +1,137 @@
+:root {
+  --icon-size: 70px;
+  --color: transparent;
+  --delay: 0.1s;
+}
+
+.contact-links {
+  width: min(100%, 700px);
+  margin: 0 auto;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: contrast(60%);
+
+  & > .link {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+
+    &.appear {
+      animation: appear 1s forwards;
+    }
+
+    &:nth-child(1) {
+      animation-delay: var(--delay);
+    }
+
+    &:nth-child(2) {
+      animation-delay: calc(var(--delay) + 0.1s);
+    }
+
+    &:nth-child(3) {
+      animation-delay: calc(var(--delay) + 0.2s);
+    }
+
+    &:nth-child(4) {
+      animation-delay: calc(var(--delay) + 0.3s);
+    }
+
+    &:nth-child(5) {
+      animation-delay: calc(var(--delay) + 0.4s);
+    }
+
+    & > svg {
+      border: var(--color) 2px solid;
+      border-radius: 4px;
+      padding: 10px;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      fill: var(--color);
+      transition: 0.2s ease;
+    }
+
+    & > span:not(.title) {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      border: var(--color) 3px solid;
+      border-radius: 4px;
+      opacity: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.2s ease;
+    }
+
+    & > .title {
+      position: absolute;
+      height: inherit;
+      color: var(--color);
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      opacity: 0;
+      transition: 0.2s ease;
+      font-weight: 400;
+      display: inline;
+    }
+  }
+}
+
+@media (min-width: 680px) {
+  .contact-links {
+    & > .link {
+      &:hover {
+        & > svg {
+          transform: rotate(-35deg) skew(20deg);
+          margin-bottom: 40px;
+        }
+
+        & > span:not(.title) {
+          &:nth-of-type(1) {
+            opacity: 0.6;
+            transform: rotate(-35deg) skew(20deg);
+            margin-bottom: 35px;
+          }
+
+          &:nth-of-type(2) {
+            opacity: 0.5;
+            transform: rotate(-35deg) skew(20deg);
+            margin-bottom: 30px;
+          }
+
+          &:nth-of-type(3) {
+            opacity: 0.4;
+            transform: rotate(-35deg) skew(20deg);
+            margin-bottom: 25px;
+          }
+
+          &:nth-of-type(4) {
+            opacity: 0.2;
+            transform: rotate(-35deg) skew(20deg);
+            margin-bottom: 20px;
+          }
+        }
+
+        & > .title {
+          opacity: 1;
+          transform: translate(0, 4em);
+        }
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate(0, -40px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
