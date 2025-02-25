@@ -75,7 +75,15 @@
 
       &:last-child {
         font-weight: 800;
-        color: var(--light-purple);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        /* color: var(--light-purple); */
+
+        & > svg{
+          width: 22px;
+        }
       }
 
       &:hover,
@@ -227,7 +235,15 @@
 
       &:last-child {
         font-weight: 800;
-        color: var(--light-purple);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        /* color: var(--light-purple); */
+
+        & > svg {
+          width: 1.1em;
+        }
       }
 
       &.active,

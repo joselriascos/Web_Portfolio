@@ -7,6 +7,7 @@ import { scrollTop } from '../../utils/functions'
 import { OpenCloseMenu } from './OpenCloseMenu'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { useCallback } from 'react'
+import { GlobeAmerica, GlobeEurope } from '../Icons'
 
 function MobileHeader({ handleHomeClick }) {
   const { shouldBeVisible, headerAboveTitle } = useHeader()
@@ -69,7 +70,10 @@ function DesktopHeader({ handleHomeClick }) {
             <li className={location.pathname === '/contact' ? 'active' : ''}>
               <Link to="/contact">{il18n.contact}</Link>
             </li>
-            <li onClick={toggleLang}>{il18n.language}</li>
+            <li onClick={toggleLang}>
+              {lang === 'en' ? <GlobeAmerica /> : <GlobeEurope />}
+              <span>{il18n.language}</span>
+            </li>
           </ul>
         </div>
       </header>

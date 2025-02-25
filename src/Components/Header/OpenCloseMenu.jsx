@@ -2,6 +2,7 @@ import { useDisableScroll } from '../../hooks/useDisableScroll'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N } from '../../utils/consts'
 import { Link, useLocation } from 'react-router'
+import { GlobeAmerica, GlobeEurope } from '../Icons'
 
 export function OpenCloseMenu() {
   const { lang, toggleLang, isMenuOpen, toggleIsMenuOpen } = useAppContext()
@@ -40,7 +41,10 @@ export function OpenCloseMenu() {
             >
               <Link to="/contact">{il18n.contact}</Link>
             </li>
-            <li onClick={toggleLang}>{il18n.language}</li>
+            <li onClick={toggleLang}>
+              {lang === 'en' ? <GlobeAmerica /> : <GlobeEurope />}
+              <span>{il18n.language}</span>
+            </li>
           </ul>
         </div>
       )}
