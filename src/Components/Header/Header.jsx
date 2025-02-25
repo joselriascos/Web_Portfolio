@@ -6,20 +6,23 @@ import { IL18N, MOBILE_WIDTH } from '../../utils/consts'
 import { scrollTop } from '../../utils/functions'
 import { OpenCloseMenu } from './OpenCloseMenu'
 import { Link, useLocation, useNavigate } from 'react-router'
+import { useCallback } from 'react'
 
-function MobileHeader() {
+function MobileHeader({ handleHomeClick }) {
   const { shouldBeVisible, headerAboveTitle } = useHeader()
-
-  const handleHomeClick = () => {
-    scrollTop()
-  }
+  const location = useLocation()
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
       <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
         <div className="header-name-column">
           <span
-            className={shouldBeVisible && !headerAboveTitle ? 'visible' : ''}
+            className={
+              (shouldBeVisible && !headerAboveTitle) ||
+              location.pathname !== '/'
+                ? 'visible'
+                : ''
+            }
             onClick={handleHomeClick}
           >
             Jose Riascos
@@ -33,17 +36,11 @@ function MobileHeader() {
   )
 }
 
-function DesktopHeader() {
+function DesktopHeader({ handleHomeClick }) {
   const { shouldBeVisible, headerAboveTitle } = useHeader()
   const { toggleLang, lang } = useAppContext()
   const il18n = IL18N[lang]
   const location = useLocation()
-  const navigate = useNavigate()
-
-  const handleHomeClick = () => {
-    navigate('/')
-    scrollTop()
-  }
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
@@ -70,7 +67,7 @@ function DesktopHeader() {
               <Link to="/about">{il18n.aboutMe}</Link>
             </li>
             <li className={location.pathname === '/contact' ? 'active' : ''}>
-              <Link to="contact">{il18n.contact}</Link>
+              <Link to="/contact">{il18n.contact}</Link>
             </li>
             <li onClick={toggleLang}>{il18n.language}</li>
           </ul>
@@ -82,6 +79,19 @@ function DesktopHeader() {
 
 export function Header() {
   const { deviceWidth } = useHeader()
+  const location = useLocation()
+  const navigate = useNavigate()
 
-  return deviceWidth <= MOBILE_WIDTH ? <MobileHeader /> : <DesktopHeader />
+  const handleHomeClick = () => {
+    if (location.pathname !== '/') {
+      navigate('/')
+    }
+    scrollTop()
+  }
+
+  return deviceWidth <= MOBILE_WIDTH ? (
+    <MobileHeader handleHomeClick={handleHomeClick} />
+  ) : (
+    <DesktopHeader handleHomeClick={handleHomeClick} />
+  )
 }

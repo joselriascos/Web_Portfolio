@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router'
 import App from '../App'
 import Home from '../pages/Home'
 import AboutMe from '../pages/AboutMe/AboutMe'
-import Contact from '../pages/Contact'
+import Contact from '../pages/Contact/Contact'
 import Project from '../pages/Project'
 import Error404 from '../pages/404'
 

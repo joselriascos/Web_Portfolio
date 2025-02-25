@@ -63,11 +63,19 @@ export function useHeader() {
             setShouldBeVisible(true)
           }
         }
+        // For any path different from the home page
       } else {
-        //Scroll down
-        if (deltaY > 0) {
-          setShouldBeVisible(false)
-          //Scroll up
+        const LIMIT = 50
+        const currentScrollY = window.scrollY
+
+        if (currentScrollY > LIMIT) {
+          //Scroll down
+          if (deltaY > 0) {
+            setShouldBeVisible(false)
+            //Scroll up
+          } else {
+            setShouldBeVisible(true)
+          }
         } else {
           setShouldBeVisible(true)
         }

@@ -38,7 +38,7 @@ export function OpenCloseMenu() {
               onClick={toggleIsMenuOpen}
               className={location.pathname === '/contact' ? 'active' : ''}
             >
-              <Link to="contact">{il18n.contact}</Link>
+              <Link to="/contact">{il18n.contact}</Link>
             </li>
             <li onClick={toggleLang}>{il18n.language}</li>
           </ul>
