@@ -8,11 +8,4 @@
 
 - Solcionar error de UI al girar pantalla en móviles -> Header tapa Title
 
-- En tecnologías disminuir velocidad al hacer hover
-
-- link a:
-    - LinkedIn
-    - GitHub
-    - whatsapp
-    - Email
-    - Teléfono
+- Sugerencia: En tecnologías disminuir velocidad al hacer hover

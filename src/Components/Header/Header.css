@@ -75,10 +75,21 @@
 
       &:last-child {
         font-weight: 800;
+        scale: 1.15;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 4px;
+
+        &::after{
+          content: '';
+          width: 4px;
+          height: 4px;
+          background-color: var(--white);
+          border-radius: 50%;
+          position: absolute;
+          top: 120%;
+        }
         /* color: var(--light-purple); */
 
         & > svg{
@@ -235,6 +246,7 @@
 
       &:last-child {
         font-weight: 800;
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
