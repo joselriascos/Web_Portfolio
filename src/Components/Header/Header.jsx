@@ -9,6 +9,25 @@ import { Link, useLocation, useNavigate } from 'react-router'
 import { useCallback } from 'react'
 import { GlobeAmerica, GlobeEurope } from '../Icons'
 
+export function Header() {
+  const { deviceWidth } = useHeader()
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleHomeClick = () => {
+    if (location.pathname !== '/') {
+      navigate('/')
+    }
+    scrollTop()
+  }
+
+  return deviceWidth <= MOBILE_WIDTH ? (
+    <MobileHeader handleHomeClick={handleHomeClick} />
+  ) : (
+    <DesktopHeader handleHomeClick={handleHomeClick} />
+  )
+}
+
 function MobileHeader({ handleHomeClick }) {
   const { shouldBeVisible, headerAboveTitle } = useHeader()
   const location = useLocation()
@@ -61,7 +80,14 @@ function DesktopHeader({ handleHomeClick }) {
         </div>
         <div className="header-nav-column">
           <ul>
-            <li className={location.pathname === '/' ? 'active' : ''}>
+            <li
+              className={
+                location.pathname === '/' ||
+                location.pathname.startsWith('/project/')
+                  ? 'active'
+                  : ''
+              }
+            >
               <Link to="/">{il18n.myWork}</Link>
             </li>
             <li className={location.pathname === '/about' ? 'active' : ''}>
@@ -78,24 +104,5 @@ function DesktopHeader({ handleHomeClick }) {
         </div>
       </header>
     </ObservedAnimatedComponent>
-  )
-}
-
-export function Header() {
-  const { deviceWidth } = useHeader()
-  const location = useLocation()
-  const navigate = useNavigate()
-
-  const handleHomeClick = () => {
-    if (location.pathname !== '/') {
-      navigate('/')
-    }
-    scrollTop()
-  }
-
-  return deviceWidth <= MOBILE_WIDTH ? (
-    <MobileHeader handleHomeClick={handleHomeClick} />
-  ) : (
-    <DesktopHeader handleHomeClick={handleHomeClick} />
   )
 }

@@ -25,7 +25,12 @@ export function OpenCloseMenu() {
           <ul>
             <li
               onClick={toggleIsMenuOpen}
-              className={location.pathname === '/' ? 'active' : ''}
+              className={
+                location.pathname === '/' ||
+                location.pathname.startsWith('/project/')
+                  ? 'active'
+                  : ''
+              }
             >
               <Link to="/">{il18n.myWork}</Link>
             </li>
