@@ -31,9 +31,10 @@ export function ContactLinks() {
     {
       to: 'tel:573218797465',
       icon: <PhoneIcon />,
-      label: il18n.phone,
+      label: il18n.callMe,
       color: '#7adec2',
       newTab: false,
+      bigger: true,
     },
     {
       to: 'https://www.linkedin.com/in/jose-luis-riascos-cubillos-584367268/',
@@ -60,6 +61,7 @@ export function ContactLinks() {
             label={link.label}
             color={link.color}
             newTab={link.newTab && link.newTab}
+            bigger={link.bigger && link.bigger}
           />
         )
       })}

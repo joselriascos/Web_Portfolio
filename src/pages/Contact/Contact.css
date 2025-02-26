@@ -1,8 +1,27 @@
-.contact-container{
-    padding-top: 30svh;
-    min-height: 80svh;
+.contact-container {
+  padding-top: 30svh;
+  min-height: 80svh;
 
-    &.fade-in{
-        animation: fadeIn 2s forwards;
-    }
+  & > h1 {
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: 400;
+    padding: 0 30px;
+    margin-bottom: 20px;
+  }
+
+  &.fade-in {
+    animation: fadeIn 2s forwards;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate(0, -40px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
 }

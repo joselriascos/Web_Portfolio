@@ -13,6 +13,8 @@ export const IL18N = {
     goBackHome: 'Go back home',
     email: 'Email',
     phone: 'Phone',
+    contactMe: 'Contact me',
+    callMe: 'Call me',
   },
   es: {
     language: 'ES',
@@ -28,6 +30,8 @@ export const IL18N = {
     goBackHome: 'Volver al inicio',
     email: 'Correo',
     phone: 'Teléfono',
+    contactMe: 'Contáctame',
+    callMe: 'Llámame',
   },
 }
 
