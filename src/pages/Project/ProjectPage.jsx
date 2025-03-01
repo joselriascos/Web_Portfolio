@@ -1,8 +1,9 @@
-import './Project.css'
+import './ProjectPage.css'
 import { useNavigate, useParams } from 'react-router'
 import { projects } from '../../mocks/projects.json'
 import { useAppContext } from '../../hooks/useAppContext'
 import { useEffect } from 'react'
+import { scrollTop } from '../../utils/functions'
 
 export default function Project() {
   const { projectId } = useParams()
@@ -15,6 +16,8 @@ export default function Project() {
   useEffect(() => {
     if (!selectedProject) navigate('/404')
   }, [selectedProject])
+
+  useEffect(() => scrollTop(), [])
 
   return (
     <div

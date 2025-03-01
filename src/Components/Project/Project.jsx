@@ -1,16 +1,21 @@
 import { ObservedAnimatedComponent } from '../ObservedAnimatedComponent'
 import { useAppContext } from '../../hooks/useAppContext'
 import './Project.css'
+import { useNavigate } from 'react-router'
 
 export function Project({ project }) {
-  const { title, image_path } = project
-  // const {title, images} = project
+  const { title, image_path, id } = project
   const { lang } = useAppContext()
+  const navigate = useNavigate()
 
-  //TODO: Redirect to route to show project info
   const handleClick = () => {
-    // console.log(project.title)
-    const alertMsg = lang === 'en' ? 'Working on this' : 'Trabajando en esto'
+    if (id) {
+      navigate(`/project/${id}`)
+      return
+    }
+
+    const alertMsg =
+      lang === 'en' ? 'Project not found' : 'Proyecto no encontrado'
     alert(alertMsg)
   }
 
