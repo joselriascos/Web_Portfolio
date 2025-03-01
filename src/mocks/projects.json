@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "id": 1,
       "title": {
         "en": "Personal CV",
         "es": "CV Personal"
@@ -14,6 +15,7 @@
       "site_url": "https://joselriascos.vercel.app/"
     },
     {
+      "id": 2,
       "title": {
         "en": "Pokemon searcher",
         "es": "Pokemon searcher"
@@ -27,6 +29,7 @@
       "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
     },
     {
+      "id": 3,
       "title": {
         "en": "Random quote machine",
         "es": "Máquina de citas aleatorias"
