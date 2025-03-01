@@ -17,8 +17,8 @@ export default function AboutMe() {
           <a
             href={
               lang === 'en'
-                ? 'https://drive.google.com/uc?id=1tLzdn4seGMLENokhAhjslBWIfslxAdzo&export=download'
-                : 'https://drive.google.com/uc?id=1EKY2Sa5VAyWn5M41_ZXhnT5bB-WUD60Q&export=download'
+                ? 'https://drive.google.com/uc?id=1ZChFOmsZHuzCIpabz66Zvyb6kB87cRv3&export=download'
+                : 'https://drive.google.com/uc?id=1P6HiwcPOqXbIJsnJatX_WRjQYwzEV830&export=download'
             }
           >
             {il18n.downloadCV}
