@@ -10,12 +10,12 @@ export default function Contact() {
   const il18n = IL18N[lang]
 
   return (
-    <ObservedAnimatedComponent>
-      <div className="contact-container">
+    <div className="contact-container">
+      <ObservedAnimatedComponent classIfVisible='fade-in'>
         <h1>{il18n.contactMe}</h1>
-        <ContactLinks />
-        <ContactInfo />
-      </div>
-    </ObservedAnimatedComponent>
+      </ObservedAnimatedComponent>
+      <ContactLinks />
+      <ContactInfo />
+    </div>
   )
 }

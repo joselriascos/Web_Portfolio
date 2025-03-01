@@ -8,10 +8,10 @@
     font-weight: 400;
     padding: 0 30px;
     margin-bottom: 20px;
-  }
 
-  &.fade-in {
-    animation: fadeIn 2s forwards;
+    &.fade-in {
+      animation: fadeIn 2s forwards;
+    }
   }
 }
 
@@ -26,9 +26,9 @@
   }
 }
 
-@media (max-width: 680px){
-  .contact-container{
-    & > h1{
+@media (max-width: 680px) {
+  .contact-container {
+    & > h1 {
       text-align: center;
     }
   }
