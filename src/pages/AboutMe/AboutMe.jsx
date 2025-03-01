@@ -3,10 +3,14 @@ import portrait from '../../assets/portrait.jpeg'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N } from '../../utils/consts'
+import { useEffect } from 'react'
+import { scrollTop } from '../../utils/functions'
 
 export default function AboutMe() {
   const { lang } = useAppContext()
   const il18n = IL18N[lang]
+
+  useEffect(() => scrollTop(), [])
 
   return (
     <ObservedAnimatedComponent threshold={0} classIfVisible="fade-in">
