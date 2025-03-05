@@ -35,4 +35,35 @@ export const IL18N = {
   },
 }
 
+export const logos = [
+  {
+    src: '/images/carousel/css.png',
+    alt: 'CSS Logo',
+  },
+  {
+    src: '/images/carousel/html.png',
+    alt: 'HTML Logo',
+  },
+  {
+    src: '/images/carousel/javascript.png',
+    alt: 'JavaScript Logo',
+  },
+  {
+    src: '/images/carousel/python.png',
+    alt: 'Python Logo',
+  },
+  {
+    src: '/images/carousel/react.png',
+    alt: 'React Logo',
+  },
+  {
+    src: '/images/carousel/tailwind.png',
+    alt: 'Tailwind Logo',
+  },
+  {
+    src: '/images/carousel/typescript.png',
+    alt: 'TypeScript Logo',
+  },
+]
+
 export const MOBILE_WIDTH = 680

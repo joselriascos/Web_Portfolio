@@ -6,11 +6,10 @@ import { IL18N, MOBILE_WIDTH } from '../../utils/consts'
 import { scrollTop } from '../../utils/functions'
 import { OpenCloseMenu } from './OpenCloseMenu'
 import { Link, useLocation, useNavigate } from 'react-router'
-import { useCallback } from 'react'
 import { GlobeAmerica, GlobeEurope } from '../Icons'
 
 export function Header() {
-  const { deviceWidth } = useHeader()
+  const { deviceWidth } = useAppContext()
   const location = useLocation()
   const navigate = useNavigate()
 

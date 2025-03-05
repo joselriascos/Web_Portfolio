@@ -5,6 +5,7 @@ export const AppContext = createContext()
 export function AppContextProvider({ children }) {
   const [lang, setLang] = useState(window.localStorage.getItem('lang') || 'en')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [deviceWidth, setDeviceWidth] = useState(window.innerWidth)
 
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -24,9 +25,16 @@ export function AppContextProvider({ children }) {
     }
   }, [lang])
 
+  // Detects changes in the window's width
+  useEffect(() => {
+    const handleResize = () => setDeviceWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <AppContext.Provider
-      value={{ lang, toggleLang, isMenuOpen, toggleIsMenuOpen }}
+      value={{ lang, toggleLang, isMenuOpen, toggleIsMenuOpen, deviceWidth }}
     >
       {children}
     </AppContext.Provider>

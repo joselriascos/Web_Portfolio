@@ -1,10 +1,10 @@
 import './WorkSection.css'
 import { ObservedAnimatedComponent } from '../ObservedAnimatedComponent'
 import { projects } from '../../mocks/projects.json'
-import { products } from '../../mocks/products.json'
 import { Project } from '../Project/Project'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N } from '../../utils/consts'
+import { Carousel } from '../Carousel/Carousel'
 
 const projectsDouble = projects.concat(projects)
 // const projectsDouble = products
@@ -29,8 +29,9 @@ export function WorkSection() {
 
       <ObservedAnimatedComponent classIfVisible="put-closer" threshold={0}>
         <div className="section tools-section">
-          {/* <h1>&lt;Tecnologies&gt;</h1>
-          <h1 className="close-tag">&lt;/Tecnologies&gt;</h1> */}
+          <h1>&lt;Tecnologies&gt;</h1>
+          <Carousel />
+          <h1 className="close-tag">&lt;/Tecnologies&gt;</h1>
         </div>
       </ObservedAnimatedComponent>
     </section>
