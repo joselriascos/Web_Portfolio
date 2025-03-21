@@ -9,6 +9,9 @@ export function useHeader() {
   const lastScrollY = useRef(window.scrollY)
   const lastTime = useRef(Date.now())
 
+  const hideHeader = () => setShouldBeVisible(false)
+  const showHeader = () => setShouldBeVisible(true)
+
   // Detects if the device is touch
   const isTouch = useMemo(() => {
     return 'ontouchstart' in window || navigator.maxTouchPoints > 0
@@ -25,10 +28,9 @@ export function useHeader() {
       const currentTime = Date.now()
       const deltaY = currentScrollY - lastScrollY.current
       const deltaTime = currentTime - lastTime.current
+      const scrollSpeed = Math.abs(deltaY / deltaTime)
 
       if (location.pathname === '/') {
-        const scrollSpeed = Math.abs(deltaY / deltaTime)
-
         const titlePosY = document
           .querySelector('.app .title')
           .getBoundingClientRect().top
@@ -45,14 +47,14 @@ export function useHeader() {
         // Scroll down
         if (deltaY > 0) {
           if (isBelowTitle) {
-            setShouldBeVisible(false)
+            hideHeader()
           }
           //Scroll up
         } else {
           if (isAboveTitle) {
-            setShouldBeVisible(true)
+            showHeader()
           } else if (scrollSpeed > speedLimit) {
-            setShouldBeVisible(true)
+            showHeader()
           }
         }
         // For any path different from the home page
@@ -63,13 +65,17 @@ export function useHeader() {
         if (currentScrollY > LIMIT) {
           //Scroll down
           if (deltaY > 0) {
-            setShouldBeVisible(false)
+            hideHeader()
             //Scroll up
           } else {
-            setShouldBeVisible(true)
+            if (isTouch) {
+              if (scrollSpeed > 1) showHeader()
+            } else {
+              showHeader()
+            }
           }
         } else {
-          setShouldBeVisible(true)
+          showHeader()
         }
       }
       lastScrollY.current = currentScrollY

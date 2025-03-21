@@ -31,17 +31,15 @@ function MobileHeader({ handleHomeClick }) {
   const { shouldBeVisible, headerAboveTitle } = useHeader()
   const location = useLocation()
 
+  const spanVisible =
+    (shouldBeVisible && !headerAboveTitle) || location.pathname !== '/'
+
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
       <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
         <div className="header-name-column">
           <span
-            className={
-              (shouldBeVisible && !headerAboveTitle) ||
-              location.pathname !== '/'
-                ? 'visible'
-                : ''
-            }
+            className={spanVisible ? 'visible' : ''}
             onClick={handleHomeClick}
           >
             Jose Riascos
@@ -58,20 +56,18 @@ function MobileHeader({ handleHomeClick }) {
 function DesktopHeader({ handleHomeClick }) {
   const { shouldBeVisible, headerAboveTitle } = useHeader()
   const { toggleLang, lang } = useAppContext()
-  const il18n = IL18N[lang]
   const location = useLocation()
+  const il18n = IL18N[lang]
+
+  const spanVisible =
+    (shouldBeVisible && !headerAboveTitle) || location.pathname !== '/'
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
       <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
         <div className="header-name-column">
           <span
-            className={
-              (shouldBeVisible && !headerAboveTitle) ||
-              location.pathname !== '/'
-                ? 'visible'
-                : ''
-            }
+            className={spanVisible ? 'visible' : ''}
             onClick={handleHomeClick}
           >
             Jose Riascos
