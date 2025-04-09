@@ -40,6 +40,8 @@
 .text-gradient,
 .fixed-text {
   position: absolute;
+  font-family: 'Bevan', serif;
+  /* font-family: 'Playfair Display', serif; */
   font-size: 9em;
   color: var(--black);
   background: var(--grey);
