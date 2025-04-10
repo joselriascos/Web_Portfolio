@@ -8,6 +8,7 @@
     font-weight: 400;
     padding: 0 30px;
     margin-bottom: 20px;
+    opacity: 0;
 
     &.fade-in {
       animation: fadeIn 2s forwards;

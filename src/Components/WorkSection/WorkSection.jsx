@@ -30,7 +30,7 @@ export function WorkSection() {
       <ObservedAnimatedComponent classIfVisible="put-closer" threshold={0}>
         <div className="section tools-section">
           <h1>&lt;Tecnologies&gt;</h1>
-          <Carousel />
+          <Carousel initialSpeed={2} />
           <h1 className="close-tag">&lt;/Tecnologies&gt;</h1>
         </div>
       </ObservedAnimatedComponent>

@@ -1,33 +1,42 @@
-.carousel-container {
-  overflow: hidden;
+.carousel {
   width: 100%;
-  height: 30svh;
+  /* height: 5em; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  margin: 0 auto;
   opacity: 0;
 
-  &.fade-in {
-    animation: fadeIn 2s forwards;
+  &.fade-in{
+    animation: fadeIn 1.5s forwards;
+  }
+}
+
+.items {
+  display: flex;
+  will-change: transform;
+}
+
+.items > div {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+
+  &:nth-child(odd){
+    rotate: 15deg;
   }
 
-  & > .carousel {
-    display: flex;
-    gap: 3em;
-    width: 100%;
-    height: 100%;
-    align-items: center;
+  &:nth-child(even){
+    rotate: -15deg;
+  }
 
-    & > img {
-      height: 50%;
-      width: auto;
-      object-fit: contain;
-      filter: brightness(90%);
-
-      &:nth-child(even) {
-        transform: rotate(15deg);
-      }
-
-      &:nth-child(odd) {
-        transform: rotate(-15deg);
-      }
-    }
+  & > img{
+    width: 60%;
+    aspect-ratio: 1;
+    margin: auto;
   }
 }

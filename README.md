@@ -6,3 +6,6 @@
 - OPCIONAL: podría poner el botón de cambiar idioma por fuera del menú en móviles
 
 - Solcionar error de UI al girar pantalla en móviles -> Header tapa Title
+
+- Estilar un poco mejor los logos del carrusel
+

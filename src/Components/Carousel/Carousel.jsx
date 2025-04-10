@@ -1,40 +1,54 @@
 import './Carousel.css'
-import { motion } from 'framer-motion'
-import { useCarousel } from '../../hooks/useCarousel'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
-import { useRef } from 'react'
+import { useRef, useState, useEffect, useMemo } from 'react'
+import { logos } from '../../utils/consts'
 
-export function Carousel() {
-  const containerRef = useRef(null)
-  const { setIsHovered, position, repeatedLogos } = useCarousel({
-    containerRef,
-  })
+export function Carousel({ initialSpeed = 1 }) {
+  const itemsRef = useRef(null)
+  const positionRef = useRef(0)
+  const animationId = useRef(null)
+  const [speed, setSpeed] = useState(initialSpeed)
+
+  const animate = () => {
+    if (itemsRef.current) {
+      positionRef.current -= speed
+      const width = itemsRef.current.scrollWidth / 2
+      if (Math.abs(positionRef.current) >= width) {
+        positionRef.current = 0
+      }
+      itemsRef.current.style.transform = `translateX(${positionRef.current}px)`
+    }
+    animationId.current = requestAnimationFrame(animate)
+  }
+
+  useEffect(() => {
+    animationId.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationId.current)
+  }, [speed])
+
+  const handleMouseEnter = () => setSpeed(initialSpeed / 2)
+  const handleMouseLeave = () => setSpeed(initialSpeed)
+
+  const items = useMemo(
+    () => Array.from({ length: 10 }, () => logos).flat(),
+    [logos]
+  )
 
   return (
-    <ObservedAnimatedComponent
-      threshold={0}
-      classIfVisible="fade-in"
-      ref={containerRef}
-    >
-      <div
-        ref={containerRef}
-        className="carousel-container"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <motion.div
-          className="carousel"
-          style={{ transform: `translateX(${position}%)` }}
+    <ObservedAnimatedComponent threshold={0} classIfVisible="fade-in">
+      <div className="carousel">
+        <div
+          className="items"
+          ref={itemsRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          {repeatedLogos.map((logo, index) => (
-            <img
-              key={index}
-              src={logo.src}
-              alt={logo.alt}
-              className="carousel-element"
-            />
+          {items.map((item, index) => (
+            <div>
+              <img src={item.src} alt={item.alt} key={index} />
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </ObservedAnimatedComponent>
   )
