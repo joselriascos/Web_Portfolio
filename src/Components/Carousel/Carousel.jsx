@@ -1,33 +1,15 @@
 import './Carousel.css'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
-import { useRef, useState, useEffect, useMemo } from 'react'
+import { useRef, useMemo } from 'react'
 import { logos } from '../../utils/consts'
+import { useCarousel } from '../../hooks/useCarousel'
 
 export function Carousel({ initialSpeed = 1 }) {
   const itemsRef = useRef(null)
-  const positionRef = useRef(0)
-  const animationId = useRef(null)
-  const [speed, setSpeed] = useState(initialSpeed)
-
-  const animate = () => {
-    if (itemsRef.current) {
-      positionRef.current -= speed
-      const width = itemsRef.current.scrollWidth / 2
-      if (Math.abs(positionRef.current) >= width) {
-        positionRef.current = 0
-      }
-      itemsRef.current.style.transform = `translateX(${positionRef.current}px)`
-    }
-    animationId.current = requestAnimationFrame(animate)
-  }
-
-  useEffect(() => {
-    animationId.current = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animationId.current)
-  }, [speed])
-
-  const handleMouseEnter = () => setSpeed(initialSpeed / 2)
-  const handleMouseLeave = () => setSpeed(initialSpeed)
+  const { handleMouseEnter, handleMouseLeave } = useCarousel({
+    itemsRef,
+    initialSpeed,
+  })
 
   const items = useMemo(
     () => Array.from({ length: 10 }, () => logos).flat(),
@@ -44,8 +26,8 @@ export function Carousel({ initialSpeed = 1 }) {
           onMouseLeave={handleMouseLeave}
         >
           {items.map((item, index) => (
-            <div>
-              <img src={item.src} alt={item.alt} key={index} />
+            <div key={index}>
+              <img src={item.src} alt={item.alt} />
             </div>
           ))}
         </div>

@@ -1,57 +1,30 @@
-import { useState, useEffect, useMemo } from 'react'
-import { useAppContext } from './useAppContext'
-import { logos } from '../utils/consts'
+import { useRef, useState, useEffect } from "react"
 
-export function useCarousel({ containerRef }) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [position, setPosition] = useState(0)
-  const { deviceWidth } = useAppContext()
-
-  const repeatedLogos = useMemo(
-    () => Array.from({ length: 10 }, () => logos).flat(),
-    [logos]
-  )
-
-  const carouselSpeed = useMemo(() => deviceWidth * 12.5, [deviceWidth]) // 12.5 is the speed multiplier
-
-  const carouselLimitX = useMemo(
-    () => -(repeatedLogos.length / logos.length - 1) * 60,
-    [repeatedLogos, logos]
-  )
-
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
-
-    let animationId
-    let startTime
-    let lastX = position
-
-    const animate = (currentTime) => {
-      if (!startTime) startTime = currentTime
-
-      const elapsed = currentTime - startTime
-      const speed = isHovered ? carouselSpeed : carouselSpeed / 2
-      const progress = elapsed / speed
-
-      const newX = lastX - progress * 100
-
-      if (newX <= carouselLimitX) {
-        lastX = 0
-        startTime = currentTime
+export function useCarousel ({itemsRef, initialSpeed}) {
+   const positionRef = useRef(0)
+    const animationId = useRef(null)
+    const [speed, setSpeed] = useState(initialSpeed)
+  
+    const animate = () => {
+      if (itemsRef.current) {
+        positionRef.current -= speed
+        const width = itemsRef.current.scrollWidth / 2
+        if (Math.abs(positionRef.current) >= width) {
+          positionRef.current = 0
+        }
+        itemsRef.current.style.transform = `translateX(${positionRef.current}px)`
       }
-
-      setPosition(newX)
-
-      animationId = requestAnimationFrame(animate)
+      animationId.current = requestAnimationFrame(animate)
     }
+  
+    useEffect(() => {
+      animationId.current = requestAnimationFrame(animate)
+      return () => cancelAnimationFrame(animationId.current)
+    }, [speed])
+  
+    const handleMouseEnter = () => setSpeed(initialSpeed / 2)
+    const handleMouseLeave = () => setSpeed(initialSpeed)
 
-    animationId = requestAnimationFrame(animate)
+    return { handleMouseEnter, handleMouseLeave }
 
-    return () => {
-      cancelAnimationFrame(animationId)
-    }
-  }, [isHovered])
-
-  return { position, setIsHovered, repeatedLogos }
 }
