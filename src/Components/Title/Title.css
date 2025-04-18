@@ -107,7 +107,7 @@
 
   .main-title {
     margin: 0;
-    padding-top: 0%;
+    padding-top: 20%;
   }
   .text-gradient,
   .fixed-text {
@@ -118,5 +118,30 @@
 
   .title > h2 {
     font-size: 2em;
+  }
+}
+
+/* Mobile on orientation change */
+@media (max-height: 700px) and (min-width: 680px) {
+  .title {
+    height: 120svh;
+  }
+}
+
+@media (max-height: 600px) and (min-width: 680px) {
+  .title {
+    height: 140svh;
+  }
+}
+
+@media (max-height: 450px) and (min-width: 680px) {
+  .title {
+    height: 200svh;
+  }
+}
+
+@media (max-height: 450px) and (max-width: 680px) {
+  .title .main-title {
+    padding-top: 30%;
   }
 }
