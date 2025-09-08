@@ -59,6 +59,10 @@ export const logos = [
     alt: 'Python Logo',
   },
   {
+    src: '/images/carousel/django.png',
+    alt: 'Django Logo',
+  },
+  {
     src: '/images/carousel/react.png',
     alt: 'React Logo',
   },
