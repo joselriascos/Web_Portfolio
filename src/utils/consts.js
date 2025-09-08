@@ -16,6 +16,8 @@ export const IL18N = {
     phone: 'Phone',
     contactMe: 'Contact me',
     callMe: 'Call me',
+    developedWith: 'Developed with',
+    project: 'Project',
   },
   es: {
     language: 'ES',
@@ -34,6 +36,8 @@ export const IL18N = {
     phone: 'Teléfono',
     contactMe: 'Contáctame',
     callMe: 'Llámame',
+    developedWith: 'Desarrollado con',
+    project: 'Proyecto',
   },
 }
 
