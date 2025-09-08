@@ -10,8 +10,12 @@ import { GlobeAmerica, GlobeEurope } from '../Icons'
 
 export function Header() {
   const { deviceWidth } = useAppContext()
+  const { shouldBeVisible, headerAboveTitle } = useHeader()
   const location = useLocation()
   const navigate = useNavigate()
+
+  const spanVisible =
+    shouldBeVisible && (!headerAboveTitle || location.pathname !== '/')
 
   const handleHomeClick = () => {
     if (location.pathname !== '/') {
@@ -21,18 +25,17 @@ export function Header() {
   }
 
   return deviceWidth <= MOBILE_WIDTH ? (
-    <MobileHeader handleHomeClick={handleHomeClick} />
+    <MobileHeader handleHomeClick={handleHomeClick} spanVisible={spanVisible} />
   ) : (
-    <DesktopHeader handleHomeClick={handleHomeClick} />
+    <DesktopHeader
+      handleHomeClick={handleHomeClick}
+      spanVisible={spanVisible}
+    />
   )
 }
 
-function MobileHeader({ handleHomeClick }) {
-  const { shouldBeVisible, headerAboveTitle } = useHeader()
-  const location = useLocation()
-
-  const spanVisible =
-    (shouldBeVisible && !headerAboveTitle) || location.pathname !== '/'
+function MobileHeader({ handleHomeClick, spanVisible }) {
+  const { shouldBeVisible } = useHeader()
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
@@ -53,14 +56,11 @@ function MobileHeader({ handleHomeClick }) {
   )
 }
 
-function DesktopHeader({ handleHomeClick }) {
-  const { shouldBeVisible, headerAboveTitle } = useHeader()
+function DesktopHeader({ handleHomeClick, spanVisible }) {
+  const { shouldBeVisible } = useHeader()
   const { toggleLang, lang } = useAppContext()
   const location = useLocation()
   const il18n = IL18N[lang]
-
-  const spanVisible =
-    (shouldBeVisible && !headerAboveTitle) || location.pathname !== '/'
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
