@@ -5,3 +5,4 @@
 - OPCIONAL: poner tecnologías usadas en cada proyecto al hacer hover
 
 - Estilar un poco mejor los logos del carrusel
+- Quitar rutas relativas
