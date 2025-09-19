@@ -37,7 +37,7 @@ export function ContactLinks() {
       bigger: true,
     },
     {
-      to: 'https://www.linkedin.com/in/jose-luis-riascos-cubillos-584367268/',
+      to: 'www.linkedin.com/in/joselriascos',
       icon: <LinkedinIcon />,
       label: 'LinkedIn',
       color: '#0864c1',
