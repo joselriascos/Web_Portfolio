@@ -6,9 +6,6 @@ import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N } from '../../utils/consts'
 import { Carousel } from '../Carousel/Carousel'
 
-const projectsDouble = projects.concat(projects)
-// const projectsDouble = products
-
 export function WorkSection() {
   const { lang } = useAppContext()
   const il18n = IL18N[lang]
@@ -19,7 +16,7 @@ export function WorkSection() {
         <div className="section projects-section">
           <h1>&lt;{il18n.projects}&gt;</h1>
           <div className="projects-grid">
-            {projectsDouble.map((project, index) => {
+            {projects.map((project, index) => {
               return <Project project={project} key={index} />
             })}
           </div>
