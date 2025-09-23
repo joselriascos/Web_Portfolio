@@ -2,7 +2,7 @@ import './ProjectPage.css'
 import { useNavigate, useParams } from 'react-router'
 import { projects } from '../../mocks/projects.json'
 import { useAppContext } from '../../hooks/useAppContext'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { scrollTop } from '../../utils/functions'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
 import { IL18N } from '../../utils/consts'
@@ -13,6 +13,7 @@ export default function Project() {
   const navigate = useNavigate()
   const { lang } = useAppContext()
   const il18n = IL18N[lang]
+  const initialHistoryLength = useRef(window.history.length)
   const selectedProject = projects.find(
     (project) => project.id === parseInt(projectId)
   )
@@ -20,6 +21,11 @@ export default function Project() {
   useEffect(() => {
     if (!selectedProject) navigate('/404')
   }, [selectedProject])
+
+  const goBack = () => {
+    const steps = initialHistoryLength.current - window.history.length - 1
+    window.history.go(steps)
+  }
 
   useEffect(() => scrollTop(), [])
 
@@ -31,7 +37,7 @@ export default function Project() {
     <ObservedAnimatedComponent threshold={0} classIfVisible="fade-in">
       <div className="project-container">
         <div className="project-title-container">
-          <div onClick={() => navigate(-1)}>
+          <div onClick={() => goBack()}>
             <GoBack />
           </div>
           <h1>{il18n.project}:</h1>
@@ -42,14 +48,10 @@ export default function Project() {
           <iframe src={selectedProject.site_url}></iframe>
         </div>
         <div className="project-links">
-          <a href={selectedProject.github_url}
-            target="_blank"
-          >
+          <a href={selectedProject.github_url} target="_blank">
             <GithubIcon />
           </a>
-          <a href={selectedProject.site_url}
-            target="_blank"
-          >
+          <a href={selectedProject.site_url} target="_blank">
             <VisitPage />
           </a>
         </div>
