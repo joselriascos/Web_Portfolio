@@ -19,7 +19,7 @@ export const IL18N = {
     developedWith: 'Developed with',
     project: 'Project',
     mobileSuggestion:
-      'If you are viewing this on a phone, I recommend opening the projects in a new tab to better view its full content.',
+      'If you are viewing this on a phone, I recommend opening the project in a new tab to better view its full content.',
   },
   es: {
     language: 'ES',
