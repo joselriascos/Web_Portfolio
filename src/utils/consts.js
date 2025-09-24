@@ -59,6 +59,10 @@ export const logos = [
     alt: 'JavaScript Logo',
   },
   {
+    src: '/images/carousel/typescript.png',
+    alt: 'TypeScript Logo',
+  },
+  {
     src: '/images/carousel/python.png',
     alt: 'Python Logo',
   },
@@ -75,8 +79,16 @@ export const logos = [
     alt: 'Tailwind Logo',
   },
   {
-    src: '/images/carousel/typescript.png',
-    alt: 'TypeScript Logo',
+    src: '/images/carousel/git.png',
+    alt: 'Git Logo',
+  },
+  {
+    src: '/images/carousel/github.png',
+    alt: 'GitHub Logo',
+  },
+  {
+    src: '/images/carousel/node.png',
+    alt: 'Node Logo',
   },
 ]
 
