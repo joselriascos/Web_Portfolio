@@ -10,7 +10,7 @@
         "en": "I developed my first web project to present my CV as a civil engineer in a clear and visually appealing way. It includes a section with my academic projects, my contact information, and a form that allows users to send me messages directly through the interface.\n\nThe frontend was built with HTML, CSS, and JavaScript, focusing on simple and intuitive navigation.\nThe backend was developed with Django, using PostgreSQL databases hosted on Supabase.\nImages are managed through Django's admin panel and dynamically loaded from Supabase.\nThe project is deployed on Vercel, ensuring fast and reliable access.\nVersion control is handled with Git/GitHub.",
         "es": "Desarrollé mi primer proyecto web para presentar mi CV como ingeniero civil de forma clara y atractiva. Incluye una sección con mis proyectos académicos, mis medios de contacto y un formulario que permite enviarme mensajes directamente desde la interfaz.\n\nEl frontend fue construido con HTML, CSS y JavaScript, priorizando una navegación simple e intuitiva.\nEl backend está desarrollado en Django, con bases de datos PostgreSQL alojadas en Supabase.\nLas imágenes se gestionan desde el panel de administración de Django y se cargan dinámicamente desde Supabase.\nEl proyecto está desplegado en Vercel, asegurando un acceso rápido y confiable.\nEl control de versiones se gestiona mediante Git/GitHub."
       },
-      "tools": ["JavaScript", "HTML", "CSS", "DJANGO"],
+      "tools": ["JavaScript", "HTML", "CSS", "Django", "Git", "GitHub"],
       "image_path": "/images/Personal-CV-icon.jpg",
       "github_url": "https://github.com/joselriascos/Personal_CV",
       "site_url": "https://joselriascos.vercel.app/",
@@ -26,7 +26,7 @@
         "en": "I developed a web application to explore Pokémon data using the PokéAPI REST API. The interface is intuitive and fully responsive.\n\nThe project was built entirely with React, with no additional external dependencies, and is deployed on Netlify for fast and reliable access.\nVersion control is handled with Git/GitHub.",
         "es": "Desarrollé una aplicación web para consultar información de Pokémon utilizando la API REST de PokéAPI. La interfaz es intuitiva y responsiva.\n\nEl proyecto fue desarrollado completamente con React, sin dependencias externas adicionales, y está desplegado en Netlify para un acceso rápido y estable.\nEl control de versiones se gestiona mediante Git/GitHub."
       },
-      "tools": ["React"],
+      "tools": ["React", "Git", "GitHub"],
       "image_path": "/images/Pokemon-searcher-icon.webp",
       "github_url": "https://github.com/joselriascos/pokemon_searcher",
       "site_url": "https://joselriascos-pokemon-searcher.netlify.app/",
@@ -42,7 +42,7 @@
         "en": "I developed a simple web application that displays random famous quotes and allows users to share them on Twitter through a minimalist and user-friendly interface.\n\nThe project was built with HTML, JavaScript, and TailwindCSS, and is deployed on Netlify for fast and reliable access.\nVersion control is handled with Git/GitHub.",
         "es": "Desarrollé una aplicación web sencilla que muestra citas famosas de manera aleatoria y permite compartirlas en Twitter mediante una interfaz minimalista y agradable para el usuario.\n\nEl proyecto fue desarrollado con HTML, JavaScript y TailwindCSS, y está desplegado en Netlify para un acceso rápido y confiable.\nEl control de versiones se gestiona mediante Git/GitHub."
       },
-      "tools": ["JavaScript", "TailwindCSS", "HTML"],
+      "tools": ["JavaScript", "TailwindCSS", "HTML", "Git", "GitHub"],
       "image_path": "/images/Random-quote-machine-icon.jpg",
       "github_url": "https://github.com/joselriascos/random-quote-machine",
       "site_url": "https://joselriascos.github.io/random-quote-machine/",
