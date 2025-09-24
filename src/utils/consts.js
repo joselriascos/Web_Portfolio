@@ -18,6 +18,8 @@ export const IL18N = {
     callMe: 'Call me',
     developedWith: 'Developed with',
     project: 'Project',
+    mobileSuggestion:
+      'If you are viewing this on a phone, I recommend opening the projects in a new tab to better view its full content.',
   },
   es: {
     language: 'ES',
@@ -38,6 +40,8 @@ export const IL18N = {
     callMe: 'Llámame',
     developedWith: 'Desarrollado con',
     project: 'Proyecto',
+    mobileSuggestion:
+      'Si estás viendo esto desde un teléfono, es recomendable que abras el proyecto en una nueva pestaña para poder visualizar mejor su contenido completo.',
   },
 }
 

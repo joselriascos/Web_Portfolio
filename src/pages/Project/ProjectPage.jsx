@@ -2,7 +2,7 @@ import './ProjectPage.css'
 import { useNavigate, useParams } from 'react-router'
 import { projects } from '../../mocks/projects.json'
 import { useAppContext } from '../../hooks/useAppContext'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { scrollTop } from '../../utils/functions'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
 import { IL18N } from '../../utils/consts'
@@ -11,12 +11,22 @@ import { GoBack, GithubIcon, VisitPage } from '../../Components/Icons'
 export default function Project() {
   const { projectId } = useParams()
   const navigate = useNavigate()
-  const { lang } = useAppContext()
+  const { lang, isTouch } = useAppContext()
   const il18n = IL18N[lang]
   const initialHistoryLength = useRef(window.history.length)
+  const [isContentLoaded, setIsContentLoaded] = useState(false)
+
   const selectedProject = projects.find(
     (project) => project.id === parseInt(projectId)
   )
+
+  useEffect(() => scrollTop(), [])
+
+  useEffect(() => {
+    if (isContentLoaded && isTouch && selectedProject.iframeConflict) {
+      alert(il18n.mobileSuggestion)
+    }
+  }, [isTouch, selectedProject, isContentLoaded])
 
   useEffect(() => {
     if (!selectedProject) navigate('/404')
@@ -27,15 +37,16 @@ export default function Project() {
     window.history.go(steps)
   }
 
-  useEffect(() => scrollTop(), [])
-
   if (!selectedProject) {
     return null
   }
 
   return (
     <ObservedAnimatedComponent threshold={0} classIfVisible="fade-in">
-      <div className="project-container">
+      <div
+        className="project-container"
+        onLoad={() => setIsContentLoaded(true)}
+      >
         <div className="project-title-container">
           <div onClick={() => goBack()}>
             <GoBack />

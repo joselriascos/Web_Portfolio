@@ -1,21 +1,18 @@
 import { useEffect, useState, useRef, useMemo } from 'react'
 import { MOBILE_WIDTH } from '../utils/consts'
+import { useAppContext } from './useAppContext'
 import { useLocation } from 'react-router'
 
 export function useHeader() {
   const [shouldBeVisible, setShouldBeVisible] = useState(true)
   const [headerAboveTitle, setHeaderAboveTitle] = useState(true)
+  const { isTouch } = useAppContext()
   const location = useLocation()
   const lastScrollY = useRef(window.scrollY)
   const lastTime = useRef(Date.now())
 
   const hideHeader = () => setShouldBeVisible(false)
   const showHeader = () => setShouldBeVisible(true)
-
-  // Detects if the device is touch
-  const isTouch = useMemo(() => {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
-  }, [window, navigator])
 
   /* Checks if the user has scrolled up or down fast to show or hide the header
   Also checks if the user has scrolled above or below the next section.

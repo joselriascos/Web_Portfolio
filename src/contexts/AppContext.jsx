@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState, useMemo } from 'react'
 
 export const AppContext = createContext()
 
@@ -6,6 +6,10 @@ export function AppContextProvider({ children }) {
   const [lang, setLang] = useState(window.localStorage.getItem('lang') || 'en')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [deviceWidth, setDeviceWidth] = useState(window.innerWidth)
+
+  const isTouch = useMemo(() => {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  }, [window, navigator])
 
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -34,7 +38,7 @@ export function AppContextProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ lang, toggleLang, isMenuOpen, toggleIsMenuOpen, deviceWidth }}
+      value={{ lang, toggleLang, isMenuOpen, toggleIsMenuOpen, deviceWidth, isTouch }}
     >
       {children}
     </AppContext.Provider>

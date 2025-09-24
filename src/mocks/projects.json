@@ -13,7 +13,8 @@
       "tools": ["JavaScript", "HTML", "CSS", "DJANGO"],
       "image_path": "/images/Personal-CV-icon.jpg",
       "github_url": "https://github.com/joselriascos/Personal_CV",
-      "site_url": "https://joselriascos.vercel.app/"
+      "site_url": "https://joselriascos.vercel.app/",
+      "iframeConflict": true
     },
     {
       "id": 2,
@@ -28,7 +29,8 @@
       "tools": ["React"],
       "image_path": "/images/Pokemon-searcher-icon.webp",
       "github_url": "https://github.com/joselriascos/pokemon_searcher",
-      "site_url": "https://joselriascos-pokemon-searcher.netlify.app/"
+      "site_url": "https://joselriascos-pokemon-searcher.netlify.app/",
+      "iframeConflict": false
     },
     {
       "id": 3,
@@ -43,7 +45,8 @@
       "tools": ["JavaScript", "TailwindCSS", "HTML"],
       "image_path": "/images/Random-quote-machine-icon.jpg",
       "github_url": "https://github.com/joselriascos/random-quote-machine",
-      "site_url": "https://joselriascos.github.io/random-quote-machine/"
+      "site_url": "https://joselriascos.github.io/random-quote-machine/",
+      "iframeConflict": false
     }
   ]
 }
