@@ -90,6 +90,14 @@ export const logos = [
     src: '/images/carousel/node.png',
     alt: 'Node Logo',
   },
+  {
+    src: '/images/carousel/mongodb.png',
+    alt: 'MongoDB Logo',
+  },
+  {
+    src: '/images/carousel/mysql.png',
+    alt: 'MySQL Logo',
+  },
 ]
 
 export const MOBILE_WIDTH = 680
