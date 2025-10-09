@@ -2,7 +2,7 @@ import './404.css'
 import { useNavigate } from 'react-router'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
 import { useAppContext } from '../../hooks/useAppContext'
-import { IL18N } from '../../utils/consts'
+import { IL18N } from '../../utils/consts.jsx'
 
 export default function Error404() {
   const navigate = useNavigate()

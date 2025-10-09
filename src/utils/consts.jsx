@@ -1,3 +1,14 @@
+import { FaCss3Alt, FaHtml5, FaPython, FaReact, FaGitAlt } from 'react-icons/fa'
+import {
+  RiJavascriptFill,
+  RiTailwindCssFill,
+  RiNodejsLine,
+} from 'react-icons/ri'
+import { BiLogoTypescript } from 'react-icons/bi'
+import { SiDjango, SiMongodb } from 'react-icons/si'
+import { IoLogoGithub } from 'react-icons/io'
+import { GrMysql } from 'react-icons/gr'
+
 export const IL18N = {
   en: {
     language: 'EN',
@@ -45,64 +56,77 @@ export const IL18N = {
   },
 }
 
-export const logos = [
+export const LOGOS = [
   {
-    src: '/images/carousel/css.png',
-    alt: 'CSS Logo',
+    node: <FaCss3Alt />,
+    title: 'CSS',
+    href: 'https://developer.mozilla.org/docs/Web/CSS',
   },
   {
-    src: '/images/carousel/html.png',
-    alt: 'HTML Logo',
+    node: <FaHtml5 />,
+    title: 'HTML',
+    href: 'https://developer.mozilla.org/docs/Web/HTML',
   },
   {
-    src: '/images/carousel/javascript.png',
-    alt: 'JavaScript Logo',
+    node: <RiJavascriptFill />,
+    title: 'JavaScript',
+    href: 'https://developer.mozilla.org/docs/Web/JavaScript',
   },
   {
-    src: '/images/carousel/typescript.png',
-    alt: 'TypeScript Logo',
+    node: <BiLogoTypescript />,
+    title: 'TypeScript',
+    href: 'https://www.typescriptlang.org/',
   },
   {
-    src: '/images/carousel/python.png',
-    alt: 'Python Logo',
+    node: <FaPython />,
+    title: 'Python',
+    href: 'https://www.python.org/',
   },
   {
-    src: '/images/carousel/django.png',
-    alt: 'Django Logo',
+    node: <SiDjango />,
+    title: 'Django',
+    href: 'https://www.djangoproject.com/',
   },
   {
-    src: '/images/carousel/react.png',
-    alt: 'React Logo',
+    node: <FaReact />,
+    title: 'React',
+    href: 'https://react.dev/',
   },
   {
-    src: '/images/carousel/tailwind.png',
-    alt: 'Tailwind Logo',
+    node: <RiTailwindCssFill />,
+    title: 'Tailwind CSS',
+    href: 'https://tailwindcss.com/',
   },
   {
-    src: '/images/carousel/git.png',
-    alt: 'Git Logo',
+    node: <FaGitAlt />,
+    title: 'Git',
+    href: 'https://git-scm.com/',
   },
   {
-    src: '/images/carousel/github.png',
-    alt: 'GitHub Logo',
+    node: <IoLogoGithub />,
+    title: 'GitHub',
+    href: 'https://github.com/',
   },
   {
-    src: '/images/carousel/node.png',
-    alt: 'Node Logo',
+    node: <RiNodejsLine />,
+    title: 'Node.js',
+    href: 'https://nodejs.org/',
   },
   {
-    src: '/images/carousel/mongodb.png',
-    alt: 'MongoDB Logo',
+    node: <SiMongodb />,
+    title: 'MongoDB',
+    href: 'https://www.mongodb.com/',
   },
   {
-    src: '/images/carousel/mysql.png',
-    alt: 'MySQL Logo',
+    node: <GrMysql />,
+    title: 'MySQL',
+    href: 'https://www.mysql.com/',
   },
 ]
 
 export const MOBILE_WIDTH = 680
 
 export const DOWNLOAD_CV_URL = {
-  en: "https://drive.google.com/uc?id=1B5M4Fh7lDY_-W8s-vUWUbufs_zPU8WlR&export=download",
-  es: "https://drive.google.com/uc?id=1IuVmiOG1EFtyzEw5CFLn0d9aBUnJE8OW&export=download"
+  en: 'https://drive.google.com/uc?id=1B5M4Fh7lDY_-W8s-vUWUbufs_zPU8WlR&export=download',
+  es: 'https://drive.google.com/uc?id=1IuVmiOG1EFtyzEw5CFLn0d9aBUnJE8OW&export=download',
 }

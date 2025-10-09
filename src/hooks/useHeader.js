@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef, useMemo } from 'react'
-import { MOBILE_WIDTH } from '../utils/consts'
+import { useEffect, useState, useRef } from 'react'
+import { MOBILE_WIDTH } from '../utils/consts.jsx'
 import { useAppContext } from './useAppContext'
 import { useLocation } from 'react-router'
 

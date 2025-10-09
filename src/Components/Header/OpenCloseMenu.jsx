@@ -1,6 +1,6 @@
 import { useDisableScroll } from '../../hooks/useDisableScroll'
 import { useAppContext } from '../../hooks/useAppContext'
-import { IL18N } from '../../utils/consts'
+import { IL18N } from '../../utils/consts.jsx'
 import { Link, useLocation } from 'react-router'
 import { GlobeAmerica, GlobeEurope } from '../Icons'
 

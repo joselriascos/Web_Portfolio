@@ -5,7 +5,7 @@ import { useAppContext } from '../../hooks/useAppContext'
 import { useEffect, useRef, useState } from 'react'
 import { scrollTop } from '../../utils/functions'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
-import { IL18N } from '../../utils/consts'
+import { IL18N } from '../../utils/consts.jsx'
 import { GoBack, GithubIcon, VisitPage } from '../../Components/Icons'
 
 export default function Project() {

@@ -63,6 +63,9 @@
 
 @media (max-width: 680px) {
   .project {
+    width: 90%;
+
+
     &:nth-child(3n + 5) {
       margin-top: 0;
     }

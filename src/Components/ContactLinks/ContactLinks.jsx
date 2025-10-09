@@ -8,7 +8,7 @@ import {
 } from '../Icons'
 import { ContactLink } from './ContactLink'
 import { useAppContext } from '../../hooks/useAppContext'
-import { IL18N } from '../../utils/consts'
+import { IL18N } from '../../utils/consts.jsx'
 
 export function ContactLinks() {
   const { lang } = useAppContext()

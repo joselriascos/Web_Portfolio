@@ -2,7 +2,7 @@ import './AboutMe.css'
 import portrait from '../../assets/portrait.jpeg'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
 import { useAppContext } from '../../hooks/useAppContext'
-import { DOWNLOAD_CV_URL, IL18N } from '../../utils/consts'
+import { DOWNLOAD_CV_URL, IL18N } from '../../utils/consts.jsx'
 import { useEffect } from 'react'
 import { scrollTop } from '../../utils/functions'
 
