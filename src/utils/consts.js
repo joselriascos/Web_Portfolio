@@ -104,5 +104,5 @@ export const MOBILE_WIDTH = 680
 
 export const DOWNLOAD_CV_URL = {
   en: "https://drive.google.com/uc?id=1B5M4Fh7lDY_-W8s-vUWUbufs_zPU8WlR&export=download",
-  es: "https://drive.google.com/uc?id=1HQE3pVqKZYvlPJh6RigUm2IgK03AQrCs&export=download"
+  es: "https://drive.google.com/uc?id=1IuVmiOG1EFtyzEw5CFLn0d9aBUnJE8OW&export=download"
 }
