@@ -20,7 +20,7 @@ export default function Project() {
     (project) => project.id === parseInt(projectId)
   )
 
-  useEffect(() => scrollTop(), [])
+  useEffect(() => scrollTop({ behavior: 'instant' }), [])
 
   useEffect(() => {
     if (isContentLoaded && isTouch && selectedProject.iframeConflict) {

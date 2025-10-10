@@ -2,19 +2,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 
-  & > .section {
+  & .section {
     margin-top: 80px;
     /* border: 1px solid white; */
 
-    & > h1 {
-        color: var(--light-grey);
-        text-align: center;
-        padding: 0 10px;
-        font-size: clamp(2em, 4vw, 4em);
-        font-weight: 500;
-        filter: brightness(60%);
-      }
+    & h1 {
+      color: var(--light-grey);
+      text-align: center;
+      padding: 0 10px;
+      font-size: clamp(2em, 4vw, 4em);
+      font-weight: 500;
+      filter: brightness(60%);
+    }
 
     &.put-closer {
       margin-top: 50px;
@@ -23,9 +25,8 @@
   }
 
   /* Projects */
-  & > .projects-section {
-
-    & > .projects-grid {
+  & .projects-section {
+    & .projects-grid {
       display: grid;
       justify-content: center;
       grid-template-columns: repeat(auto-fill, minmax(220px, 27%));
@@ -33,7 +34,20 @@
   }
 
   /* Tecnologies */
-  & > .tools-section{
+  & .tools-section {
     padding-top: 20px;
   }
+}
+
+/* Background */
+.work-background {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.work-content {
+  position: relative;
+  z-index: 1;
 }
