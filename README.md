@@ -1,7 +1,8 @@
-- Buscar fuentes para títulos (los tamaños ya están bien)
-- Hacer proyectos más grandes para móvil
-- Animar entrada de Title
 - Buscar favicon y favicons para proyectos
+- Scroll rápido al entrar a proyecto
+
+- Buscar fuentes para títulos (los tamaños ya están bien)
+- Animar entrada de Title
 
 - Quitar rutas relativas
 
