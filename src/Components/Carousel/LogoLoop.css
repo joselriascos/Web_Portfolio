@@ -15,8 +15,8 @@
 }
 
 .logoloop--scale-hover {
-  padding-top: calc(var(--logoloop-logoHeight) * 0.6);
-  padding-bottom: calc(var(--logoloop-logoHeight) * 0.6);
+  padding: calc(var(--logoloop-logoHeight) * 0.1) 0;
+  margin: calc(var(--logoloop-logoHeight) * 0.5) 0;
 }
 
 @media (prefers-color-scheme: dark) {
