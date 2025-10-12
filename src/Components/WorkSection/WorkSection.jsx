@@ -4,7 +4,7 @@ import { projects } from '../../mocks/projects.json'
 import { Project } from '../Project/Project'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N, LOGOS } from '../../utils/consts.jsx'
-import { LogoLoop } from '../Carousel/LogoLoop'
+import { LogoLoop } from '../LogoLoop/LogoLoop'
 import { Particles } from '../Particles/Particles'
 
 export function WorkSection() {
