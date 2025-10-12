@@ -56,7 +56,10 @@ export default function Project() {
         </div>
         <div className="project-description-container">
           <p>{selectedProject?.description[lang]}</p>
-          <iframe src={selectedProject.site_url}></iframe>
+          <iframe
+            src={selectedProject.site_url}
+            sandbox="allow-same-origin allow-scripts allow-popups"
+          ></iframe>
         </div>
         <div className="project-links">
           <a href={selectedProject.github_url} target="_blank">

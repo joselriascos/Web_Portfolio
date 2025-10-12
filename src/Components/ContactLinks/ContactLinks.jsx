@@ -14,7 +14,7 @@ export function ContactLinks() {
   const { lang } = useAppContext()
   const il18n = IL18N[lang]
 
-  const links = [
+  const LINKS = [
     {
       to: 'https://github.com/joselriascos',
       icon: <GithubIcon />,
@@ -37,7 +37,7 @@ export function ContactLinks() {
       bigger: true,
     },
     {
-      to: 'www.linkedin.com/in/joselriascos',
+      to: 'https://www.linkedin.com/in/joselriascos/',
       icon: <LinkedinIcon />,
       label: 'LinkedIn',
       color: '#0864c1',
@@ -52,7 +52,7 @@ export function ContactLinks() {
 
   return (
     <div className="contact-links">
-      {links.map((link, index) => {
+      {LINKS.map((link, index) => {
         return (
           <ContactLink
             key={index}
