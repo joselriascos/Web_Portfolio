@@ -15,7 +15,7 @@ export function useHeader() {
 
   useEffect(() => {
     setClassName(`main-header ${shouldBeVisible ? '' : 'hidden'}`)
-  }, [])
+  }, [shouldBeVisible])
 
   const hideHeader = () => setShouldBeVisible(false)
   const showHeader = () => setShouldBeVisible(true)
