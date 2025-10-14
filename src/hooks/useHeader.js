@@ -11,6 +11,12 @@ export function useHeader() {
   const lastScrollY = useRef(window.scrollY)
   const lastTime = useRef(Date.now())
 
+  const [className, setClassName] = useState('main-header hidden')
+
+  useEffect(() => {
+    setClassName(`main-header ${shouldBeVisible ? '' : 'hidden'}`)
+  }, [])
+
   const hideHeader = () => setShouldBeVisible(false)
   const showHeader = () => setShouldBeVisible(true)
 
@@ -83,5 +89,5 @@ export function useHeader() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [location.pathname, isTouch])
 
-  return { shouldBeVisible, headerAboveTitle }
+  return { className, shouldBeVisible, headerAboveTitle }
 }

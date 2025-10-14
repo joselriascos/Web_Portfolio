@@ -35,11 +35,11 @@ export function Header() {
 }
 
 function MobileHeader({ handleHomeClick, spanVisible }) {
-  const { shouldBeVisible } = useHeader()
+  const { className } = useHeader()
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
-      <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
+      <header className={className}>
         <div className="header-name-column">
           <span
             className={spanVisible ? 'visible' : ''}
@@ -57,14 +57,14 @@ function MobileHeader({ handleHomeClick, spanVisible }) {
 }
 
 function DesktopHeader({ handleHomeClick, spanVisible }) {
-  const { shouldBeVisible } = useHeader()
+  const { className } = useHeader()
   const { toggleLang, lang } = useAppContext()
   const location = useLocation()
   const il18n = IL18N[lang]
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
-      <header className={`main-header ${shouldBeVisible ? '' : 'hidden'}`}>
+      <header className={className}>
         <div className="header-name-column">
           <span
             className={spanVisible ? 'visible' : ''}

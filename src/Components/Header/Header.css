@@ -89,7 +89,7 @@
           border-radius: 50%;
           position: absolute;
           top: 120%;
-          transition: .4s ease;
+          transition: 0.4s ease;
         }
         /* color: var(--light-purple); */
 
@@ -103,7 +103,7 @@
         cursor: pointer;
         color: var(--light-purple);
 
-        &:after{
+        &:after {
           background-color: var(--light-purple);
         }
       }
