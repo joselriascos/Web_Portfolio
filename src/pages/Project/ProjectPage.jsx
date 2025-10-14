@@ -58,7 +58,7 @@ export default function Project() {
           <p>{selectedProject?.description[lang]}</p>
           <iframe
             src={selectedProject.site_url}
-            sandbox="allow-same-origin allow-scripts allow-popups"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
           ></iframe>
         </div>
         <div className="project-links">

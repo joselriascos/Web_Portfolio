@@ -3,22 +3,6 @@
     {
       "id": 1,
       "title": {
-        "en": "Web Portfolio",
-        "es": "Portafolio Web"
-      },
-      "description": {
-        "en": "I developed a personal portfolio website to showcase my background and experience as a web developer. It includes sections with my projects, my tech stack, and contact links, providing visitors with a clear overview of my work and skills.\n\nThe frontend was built with React, featuring smooth navigation managed with React Router.\nVersion control is handled with Git/GitHub, ensuring consistent updates and collaboration.\nI am currently working on implementing the backend using Node.js and Express to expand the site’s functionality.",
-        "es": "Desarrollé un sitio web de portafolio personal para mostrar mi trayectoria y experiencia como desarrollador web. Incluye secciones con mis proyectos, mi stack tecnológico y enlaces de contacto, ofreciendo a los visitantes una visión clara de mi trabajo y habilidades.\n\nEl frontend fue construido con React, con una navegación fluida gestionada mediante React Router.\nEl control de versiones se maneja con Git/GitHub, garantizando actualizaciones consistentes y colaboración.\nActualmente estoy trabajando en la implementación del backend utilizando Node.js y Express para ampliar la funcionalidad del sitio."
-      },
-      "tools": ["JavaScript", "React", "HTML", "CSS", "Git", "GitHub"],
-      "image_path": "/favicon.png",
-      "github_url": "https://github.com/joselriascos/Personal_CV",
-      "site_url": "https://joselriascos-portfolio.netlify.app/",
-      "iframeConflict": true
-    },
-    {
-      "id": 2,
-      "title": {
         "en": "Personal CV",
         "es": "CV Personal"
       },
@@ -33,7 +17,7 @@
       "iframeConflict": true
     },
     {
-      "id": 3,
+      "id": 2,
       "title": {
         "en": "Pokemon searcher",
         "es": "Pokemon searcher"
@@ -49,7 +33,47 @@
       "iframeConflict": false
     },
     {
+      "id": 3,
+      "title": {
+        "en": "React Redux CRUD",
+        "es": "CRUD React Redux"
+      },
+      "description": {
+        "en": "I developed a web application to exFplore Pokémon data using the PokéAPI REST API. The interface is intuitive and fully responsive.\n\nThe project was built entirely with React, with no additional external dependencies, and is deployed on Netlify for fast and reliable access.\nVersion control is handled with Git/GitHub.",
+        "es": "Desarrollé una aplicación web para consultar información de Pokémon utilizando la API REST de PokéAPI. La interfaz es intuitiva y responsiva.\n\nEl proyecto fue desarrollado completamente con React, sin dependencias externas adicionales, y está desplegado en Netlify para un acceso rápido y estable.\nEl control de versiones se gestiona mediante Git/GitHub."
+      },
+      "tools": [
+        "React",
+        "Redux",
+        "HTML",
+        "TailwindCSS",
+        "TypeScript",
+        "Git",
+        "GitHub"
+      ],
+      "image_path": "/images/CRUD-redux-icon.png",
+      "github_url": "https://github.com/joselriascos/Aprendiendo-React/tree/main/projects/09-crud-react-redux",
+      "site_url": "https://joselriascos-crud-redux-toolkit.netlify.app/",
+      "iframeConflict": false
+    },
+    {
       "id": 4,
+      "title": {
+        "en": "Web Portfolio",
+        "es": "Portafolio Web"
+      },
+      "description": {
+        "en": "I developed a personal portfolio website to showcase my background and experience as a web developer. It includes sections with my projects, my tech stack, and contact links, providing visitors with a clear overview of my work and skills.\n\nThe frontend was built with React, featuring smooth navigation managed with React Router.\nVersion control is handled with Git/GitHub, ensuring consistent updates and collaboration.\nI am currently working on implementing the backend using Node.js and Express to expand the site’s functionality.",
+        "es": "Desarrollé un sitio web de portafolio personal para mostrar mi trayectoria y experiencia como desarrollador web. Incluye secciones con mis proyectos, mi stack tecnológico y enlaces de contacto, ofreciendo a los visitantes una visión clara de mi trabajo y habilidades.\n\nEl frontend fue construido con React, con una navegación fluida gestionada mediante React Router.\nEl control de versiones se maneja con Git/GitHub, garantizando actualizaciones consistentes y colaboración.\nActualmente estoy trabajando en la implementación del backend utilizando Node.js y Express para ampliar la funcionalidad del sitio."
+      },
+      "tools": ["JavaScript", "React", "HTML", "CSS", "Git", "GitHub"],
+      "image_path": "/favicon.png",
+      "github_url": "https://github.com/joselriascos/Personal_CV",
+      "site_url": "https://joselriascos-portfolio.netlify.app/",
+      "iframeConflict": true
+    },
+    {
+      "id": 5,
       "title": {
         "en": "Random quote machine",
         "es": "Máquina de citas aleatorias"
