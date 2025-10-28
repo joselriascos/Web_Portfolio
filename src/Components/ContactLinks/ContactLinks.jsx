@@ -29,7 +29,7 @@ export function ContactLinks() {
       newTab: false,
     },
     {
-      to: 'tel:573218797465',
+      to: 'tel:+573218797465',
       icon: <PhoneIcon />,
       label: il18n.callMe,
       color: '#7adec2',
