@@ -1,6 +1,6 @@
 import './ProjectPage.css'
 import { useNavigate, useParams } from 'react-router'
-import { projects } from '../../mocks/projects.json'
+import { projects } from '../../data/projects.json'
 import { useAppContext } from '../../hooks/useAppContext'
 import { useEffect, useRef, useState } from 'react'
 import { scrollTop } from '../../utils/functions'

@@ -1,6 +1,6 @@
 import './WorkSection.css'
 import { ObservedAnimatedComponent } from '../ObservedAnimatedComponent'
-import { projects } from '../../mocks/projects.json'
+import { projects } from '../../data/projects.json'
 import { Project } from '../Project/Project'
 import { useAppContext } from '../../hooks/useAppContext'
 import { IL18N, LOGOS } from '../../utils/consts.jsx'
