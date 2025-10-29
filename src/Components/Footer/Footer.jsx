@@ -1,5 +1,5 @@
 import './Footer.css'
-import { ScrollTopIcon } from '../Icons'
+import { ArrowIcon } from '../Icons'
 import { scrollTop } from '../../utils/functions'
 
 export function Footer() {
@@ -13,7 +13,7 @@ export function Footer() {
       </p>
 
       <div className="icon-container" onClick={scrollTop}>
-        <ScrollTopIcon />
+        <ArrowIcon />
       </div>
     </section>
   )

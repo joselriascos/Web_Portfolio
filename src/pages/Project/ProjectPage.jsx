@@ -2,25 +2,30 @@ import './ProjectPage.css'
 import { useNavigate, useParams } from 'react-router'
 import { projects } from '../../data/projects.json'
 import { useAppContext } from '../../hooks/useAppContext'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { scrollTop } from '../../utils/functions'
 import { ObservedAnimatedComponent } from '../../Components/ObservedAnimatedComponent'
 import { IL18N } from '../../utils/consts.jsx'
-import { GoBack, GithubIcon, VisitPage } from '../../Components/Icons'
+import {
+  GoBack,
+  GithubIcon,
+  VisitPage,
+  ArrowIcon,
+} from '../../Components/Icons'
+import { RiArrowDownDoubleLine } from 'react-icons/ri'
 
 export default function Project() {
   const { projectId } = useParams()
   const navigate = useNavigate()
   const { lang, isTouch } = useAppContext()
   const il18n = IL18N[lang]
-  const initialHistoryLength = useRef(window.history.length)
   const [isContentLoaded, setIsContentLoaded] = useState(false)
 
   const selectedProject = projects.find(
     (project) => project.id === parseInt(projectId)
   )
 
-  useEffect(() => scrollTop({ behavior: 'instant' }), [])
+  useEffect(() => scrollTop({ behavior: 'instant' }), [selectedProject])
 
   useEffect(() => {
     if (isContentLoaded && isTouch && selectedProject.iframeConflict) {
@@ -33,8 +38,19 @@ export default function Project() {
   }, [selectedProject])
 
   const goBack = () => {
-    const steps = initialHistoryLength.current - window.history.length - 1
-    window.history.go(steps)
+    navigate('/')
+  }
+
+  const previusProject = () => {
+    const previusId =
+      selectedProject.id - 1 === 0 ? projects.length : selectedProject.id - 1
+    navigate(`/project/${previusId}`)
+  }
+
+  const nextProject = () => {
+    const nextId =
+      selectedProject.id + 1 > projects.length ? 1 : selectedProject.id + 1
+    navigate(`/project/${nextId}`)
   }
 
   if (!selectedProject) {
@@ -48,19 +64,32 @@ export default function Project() {
         onLoad={() => setIsContentLoaded(true)}
       >
         <div className="project-title-container">
-          <div onClick={() => goBack()}>
+          <div onClick={goBack}>
             <GoBack />
           </div>
           <h1>{il18n.project}:</h1>
           <p>{selectedProject?.title[lang]}</p>
+          <RiArrowDownDoubleLine />
         </div>
+
         <div className="project-description-container">
           <p>{selectedProject?.description[lang]}</p>
-          <iframe
-            src={selectedProject.site_url}
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-          ></iframe>
+          <div className="frame-container">
+            <div className="change-project previus" onClick={previusProject}>
+              <ArrowIcon />
+            </div>
+
+            <iframe
+              src={selectedProject.site_url}
+              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+            ></iframe>
+
+            <div className="change-project next" onClick={nextProject}>
+              <ArrowIcon />
+            </div>
+          </div>
         </div>
+
         <div className="project-links">
           <a href={selectedProject.github_url} target="_blank">
             <GithubIcon />
@@ -69,6 +98,7 @@ export default function Project() {
             <VisitPage />
           </a>
         </div>
+
         <div className="project-tools-container">
           <h2>{il18n.developedWith}:</h2>
           <div className="tools">
