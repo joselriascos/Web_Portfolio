@@ -46,28 +46,31 @@
       transition: 0.5s ease-out;
     }
   }
-
-  &:hover > .hidden-link {
-    opacity: 1;
-
-    & > span {
-      opacity: 1;
-    }
-  }
-
-  &:hover > img {
-    opacity: 0.4;
-    filter: blur(1px);
-  }
 }
 
 @media (max-width: 680px) {
   .project {
     width: 90%;
 
-
     &:nth-child(3n + 5) {
       margin-top: 0;
+    }
+  }
+}
+
+@media (min-width: 681px) {
+  .project {
+    &:hover > .hidden-link {
+      opacity: 1;
+
+      & > span {
+        opacity: 1;
+      }
+    }
+
+    &:hover > img {
+      opacity: 0.4;
+      filter: blur(1px);
     }
   }
 }
