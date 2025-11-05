@@ -20,7 +20,10 @@ export function AppContextProvider({ children }) {
   }
 
   useEffect(() => {
-    document.title = lang === 'en' ? 'Web Portfolio' : 'Portafolio Web'
+    document.title =
+      lang === 'en'
+        ? 'Web Portfolio | joselriascos'
+        : 'Portafolio Web | joselriascos'
     window.localStorage.setItem('lang', lang)
 
     return () => {
@@ -38,7 +41,14 @@ export function AppContextProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ lang, toggleLang, isMenuOpen, toggleIsMenuOpen, deviceWidth, isTouch }}
+      value={{
+        lang,
+        toggleLang,
+        isMenuOpen,
+        toggleIsMenuOpen,
+        deviceWidth,
+        isTouch,
+      }}
     >
       {children}
     </AppContext.Provider>

@@ -19,7 +19,7 @@ export const IL18N = {
     projects: 'Projects',
     skills: 'Skills',
     aboutMeContent:
-      'I am a civil engineer passionate about programming and web development. I am a fullstack developer with a focus on frontend, driven by continuous learning and the creation of creative and efficient solutions in dynamic environments. I love learning new technologies and constantly improving my skills. In this portfolio, you will find some of my projects where I apply my knowledge to build effective and efficient web experiences.',
+      "Hi! I'm Jose Riascos, a civil engineer who discovered in programming a way to make everyday tasks simpler and more efficient. It all started by automating small processes, and before I knew it, I had found my true passion.\n\nToday, I work in web development as a fullstack developer, with a special focus on frontend. I love turning ideas into clear, useful, and enjoyable interfaces, paying attention to every detail so that technology feels approachable and intuitive.\n\nI consider myself a curious, adaptable person who is always learning. I enjoy new challenges and believe that technology can transform realities when it's created with empathy and purpose.",
     downloadCV: 'Download my CV',
     pageNotFound: 'Page not found',
     goBackHome: 'Go back home',
@@ -41,7 +41,7 @@ export const IL18N = {
     projects: 'Proyectos',
     skills: 'Herramientas',
     aboutMeContent:
-      'Soy un ingeniero civil apasionado por la programación y el desarrollo web. Soy desarrollador fullstack con enfoque en frontend, motivado por el aprendizaje continuo y la creación de soluciones creativas y eficientes en entornos dinámicos. Me encanta aprender nuevas tecnologías y mejorar constantemente mis habilidades. En este portafolio encontrarás algunos de mis proyectos, donde aplico mis conocimientos para desarrollar experiencias web efectivas y eficientes.',
+      '¡Hola! Soy Jose Riascos, un ingeniero civil que descubrió en la programación una forma de hacer más simples y eficientes las cosas del día a día. Todo comenzó automatizando pequeñas tareas, y sin darme cuenta, terminé encontrando mi verdadera pasión.\n\nHoy me dedico al desarrollo web como fullstack developer, con un enfoque especial en el frontend. Me encanta convertir ideas en interfaces claras, útiles y agradables, cuidando cada detalle para que la tecnología se sienta cercana e intuitiva.\n\nMe considero una persona curiosa, adaptable y en constante aprendizaje. Disfruto los nuevos retos y creo que la tecnología puede transformar realidades cuando se crea con empatía y propósito.',
     downloadCV: 'Descarga mi CV',
     pageNotFound: 'Página no encontrada',
     goBackHome: 'Volver al inicio',
