@@ -17,7 +17,7 @@ export default function AboutMe() {
       <div className="about-me-container">
         <h1 className="about-me-title">{il18n.aboutMe}</h1>
         <div className="about-me-content">
-          <p>{il18n.aboutMeContent}</p>
+          <p dangerouslySetInnerHTML={{ __html: il18n.aboutMeContent }} />
           <a href={lang === 'en' ? DOWNLOAD_CV_URL.en : DOWNLOAD_CV_URL.es}>
             {il18n.downloadCV}
           </a>

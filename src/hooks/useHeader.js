@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
 import { MOBILE_WIDTH } from '../utils/consts.jsx'
 import { useAppContext } from './useAppContext'
 import { useLocation } from 'react-router'
@@ -12,6 +12,12 @@ export function useHeader() {
   const lastTime = useRef(Date.now())
 
   const [className, setClassName] = useState('main-header hidden')
+
+  const spanVisible = useMemo(() => {
+    if (location.pathname === '/' && headerAboveTitle) return false
+
+    return shouldBeVisible && (!headerAboveTitle || location.pathname !== '/')
+  }, [shouldBeVisible, headerAboveTitle, location.pathname])
 
   useEffect(() => {
     setClassName(`main-header ${shouldBeVisible ? '' : 'hidden'}`)
@@ -89,5 +95,5 @@ export function useHeader() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [location.pathname, isTouch])
 
-  return { className, shouldBeVisible, headerAboveTitle }
+  return { className, shouldBeVisible, headerAboveTitle, spanVisible }
 }

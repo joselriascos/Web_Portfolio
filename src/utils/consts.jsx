@@ -19,7 +19,7 @@ export const IL18N = {
     projects: 'Projects',
     skills: 'Skills',
     aboutMeContent:
-      "Hi! I'm Jose Riascos, a civil engineer who discovered in programming a way to make everyday tasks simpler and more efficient. It all started by automating small processes, and before I knew it, I had found my true passion.\n\nToday, I work in web development as a fullstack developer, with a special focus on frontend. I love turning ideas into clear, useful, and enjoyable interfaces, paying attention to every detail so that technology feels approachable and intuitive.\n\nI consider myself a curious, adaptable person who is always learning. I enjoy new challenges and believe that technology can transform realities when it's created with empathy and purpose.",
+      "Hi! I'm Jose Riascos, a civil engineer who discovered in programming a way to make everyday tasks simpler and more efficient. <span class='important'> It all started by automating small processes, and before I knew it, I had found my true passion. </span>\n\nToday, <span class='important'> I work in web development as a fullstack developer, with a special focus on frontend. </span> I love turning ideas into clear, useful, and enjoyable interfaces, paying attention to every detail so that technology feels approachable and intuitive.\n\n<span class='important'> I consider myself a curious, adaptable person who is always learning. </span> I enjoy new challenges and believe that technology can transform realities when it's created with empathy and purpose.",
     downloadCV: 'Download my CV',
     pageNotFound: 'Page not found',
     goBackHome: 'Go back home',

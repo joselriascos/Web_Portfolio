@@ -40,8 +40,9 @@
 .text-gradient,
 .fixed-text {
   position: absolute;
+  font-family: 'Montserrat', sans-serif;
   /* font-family: 'Bevan', serif; */
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
   font-size: 9em;
   color: var(--black);
   background: var(--grey);
@@ -50,10 +51,16 @@
   -webkit-text-stroke: transparent 2px;
   cursor: default;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.06em;
   scale: 1 1.2;
   min-height: 50%;
   width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &::selection {
+    background: none;
+  }
 }
 
 .fixed-text {
@@ -75,6 +82,12 @@
   color: var(--purple);
   filter: blur(0.012em);
   cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &::selection {
+    background: none;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -89,7 +102,7 @@
 
   .text-gradient,
   .fixed-text {
-    letter-spacing: 0.1em;
+    /* letter-spacing: 0.06em; */
     line-height: 1em;
     margin-top: -90px;
   }

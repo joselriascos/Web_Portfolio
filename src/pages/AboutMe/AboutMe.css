@@ -30,6 +30,12 @@
       font-size: 1.1em;
       line-height: 1.5em;
       margin-top: 50px;
+
+      > span.important {
+        font-weight: 600;
+        color: var(--light-purple);
+        filter: brightness(125%);
+      }
     }
 
     & > a {

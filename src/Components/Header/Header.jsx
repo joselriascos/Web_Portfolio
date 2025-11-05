@@ -10,12 +10,9 @@ import { GlobeAmerica, GlobeEurope } from '../Icons'
 
 export function Header() {
   const { deviceWidth } = useAppContext()
-  const { shouldBeVisible, headerAboveTitle } = useHeader()
+  const { spanVisible } = useHeader()
   const location = useLocation()
   const navigate = useNavigate()
-
-  const spanVisible =
-    shouldBeVisible && (!headerAboveTitle || location.pathname !== '/')
 
   const handleHomeClick = () => {
     if (location.pathname !== '/') {
@@ -51,7 +48,7 @@ function MobileHeader({ handleHomeClick, spanVisible }) {
           </span>
         </div>
         <div className="header-nav-column">
-          <div className='toggle-lang' onClick={toggleLang}>
+          <div className="toggle-lang" onClick={toggleLang}>
             {lang === 'en' ? <GlobeAmerica /> : <GlobeEurope />}
             <span>{il18n.language}</span>
           </div>
