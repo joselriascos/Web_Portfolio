@@ -74,16 +74,19 @@ export default function Project() {
 
         <div className="project-description-container">
           <p>{selectedProject?.description[lang]}</p>
+
           <div className="frame-container">
             <div className="change-project previus" onClick={previusProject}>
               <ArrowIcon />
             </div>
-
-            <iframe
-              src={selectedProject.site_url}
-              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-            ></iframe>
-
+            {!selectedProject.iframeBlocked && (
+              <iframe
+                key={selectedProject.id}
+                src={selectedProject.site_url}
+                title={selectedProject.title}
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+              ></iframe>
+            )}
             <div className="change-project next" onClick={nextProject}>
               <ArrowIcon />
             </div>

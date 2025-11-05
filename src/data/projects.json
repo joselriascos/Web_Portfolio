@@ -14,7 +14,8 @@
       "image_path": "/images/Personal-CV-icon.jpg",
       "github_url": "https://github.com/joselriascos/Personal_CV",
       "site_url": "https://joselriascos.vercel.app/",
-      "iframeConflict": true
+      "iframeConflict": true,
+      "iframeBlocked": false
     },
     {
       "id": 2,
@@ -30,7 +31,8 @@
       "image_path": "/images/Pokemon-searcher-icon.webp",
       "github_url": "https://github.com/joselriascos/pokemon_searcher",
       "site_url": "https://joselriascos-pokemon-searcher.netlify.app/",
-      "iframeConflict": false
+      "iframeConflict": false,
+      "iframeBlocked": false
     },
     {
       "id": 3,
@@ -54,23 +56,25 @@
       "image_path": "/images/CRUD-redux-icon.png",
       "github_url": "https://github.com/joselriascos/Aprendiendo-React/tree/main/projects/09-crud-react-redux",
       "site_url": "https://joselriascos-crud-redux-toolkit.netlify.app/",
-      "iframeConflict": false
+      "iframeConflict": false,
+      "iframeBlocked": false
     },
     {
       "id": 4,
       "title": {
-        "en": "Web Portfolio",
-        "es": "Portafolio Web"
+        "en": "JoseAI | Chatbot",
+        "es": "JoseAI | Chatbot"
       },
       "description": {
-        "en": "I developed a personal portfolio website to showcase my background and experience as a web developer. It includes sections with my projects, my tech stack, and contact links, providing visitors with a clear overview of my work and skills.\n\nThe frontend was built with React, featuring smooth navigation managed with React Router.\nVersion control is handled with Git/GitHub, ensuring consistent updates and collaboration.\nI am currently working on implementing the backend using Node.js and Express to expand the site’s functionality.",
-        "es": "Desarrollé un sitio web de portafolio personal para mostrar mi trayectoria y experiencia como desarrollador web. Incluye secciones con mis proyectos, mi stack tecnológico y enlaces de contacto, ofreciendo a los visitantes una visión clara de mi trabajo y habilidades.\n\nEl frontend fue construido con React, con una navegación fluida gestionada mediante React Router.\nEl control de versiones se maneja con Git/GitHub, garantizando actualizaciones consistentes y colaboración.\nActualmente estoy trabajando en la implementación del backend utilizando Node.js y Express para ampliar la funcionalidad del sitio."
+        "en": "I developed a chatbot for Telegram programmed in Python, designed to serve as my personal AI assistant. The bot provides information about me and my career as a web developer, allowing users to learn more about my background and projects through a conversational interface.\n\nIt operates using a Flask-based webhook and is deployed on Render to ensure reliability and scalability. Users can access and interact with the bot directly on Telegram via @joselRiascosBot.",
+        "es": "Desarrollé un chatbot para Telegram programado en Python, diseñado para funcionar como mi asistente de IA personal. El bot ofrece información sobre mí y mi carrera como desarrollador web, permitiendo a los usuarios conocer más sobre mi trayectoria y proyectos mediante una interfaz conversacional.\n\nFunciona gracias a un webhook construido con Flask y está desplegado en Render para garantizar disponibilidad y escalabilidad. Los usuarios pueden acceder e interactuar con el bot directamente en Telegram a través de @joselRiascosBot."
       },
-      "tools": ["JavaScript", "React", "HTML", "CSS", "Git", "GitHub"],
-      "image_path": "/favicon.png",
-      "github_url": "https://github.com/joselriascos/Personal_CV",
-      "site_url": "https://joselriascos-portfolio.netlify.app/",
-      "iframeConflict": false
+      "tools": ["Python", "Flask", "Git", "GitHub"],
+      "image_path": "/images/Telegram-Bot-icon.png",
+      "github_url": "https://github.com/joselriascos/JoseAI",
+      "site_url": "https://t.me/joselRiascosBot",
+      "iframeConflict": false,
+      "iframeBlocked": true
     },
     {
       "id": 5,
@@ -86,7 +90,8 @@
       "image_path": "/images/Random-quote-machine-icon.jpg",
       "github_url": "https://github.com/joselriascos/random-quote-machine",
       "site_url": "https://joselriascos.github.io/random-quote-machine/",
-      "iframeConflict": false
+      "iframeConflict": false,
+      "iframeBlocked": false
     }
   ]
 }

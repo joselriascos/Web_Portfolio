@@ -36,6 +36,8 @@ export function Header() {
 
 function MobileHeader({ handleHomeClick, spanVisible }) {
   const { className } = useHeader()
+  const { toggleLang, lang } = useAppContext()
+  const il18n = IL18N[lang]
 
   return (
     <ObservedAnimatedComponent classIfVisible="fade-in" threshold={0.1}>
@@ -49,6 +51,10 @@ function MobileHeader({ handleHomeClick, spanVisible }) {
           </span>
         </div>
         <div className="header-nav-column">
+          <div className='toggle-lang' onClick={toggleLang}>
+            {lang === 'en' ? <GlobeAmerica /> : <GlobeEurope />}
+            <span>{il18n.language}</span>
+          </div>
           <OpenCloseMenu />
         </div>
       </header>
