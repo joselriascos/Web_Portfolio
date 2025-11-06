@@ -20,16 +20,9 @@ export function AppContextProvider({ children }) {
   }
 
   useEffect(() => {
-    document.title =
-      lang === 'en'
-        ? 'Web Portfolio | joselriascos'
-        : 'Portafolio Web | joselriascos'
     window.localStorage.setItem('lang', lang)
 
-    return () => {
-      document.title = 'Web Portfolio'
-      window.localStorage.removeItem('lang')
-    }
+    return () => window.localStorage.removeItem('lang')
   }, [lang])
 
   // Detects changes in the window's width
