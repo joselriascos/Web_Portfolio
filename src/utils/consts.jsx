@@ -41,7 +41,7 @@ export const IL18N = {
     projects: 'Proyectos',
     skills: 'Herramientas',
     aboutMeContent:
-      '¡Hola! Soy Jose Riascos, un ingeniero civil que descubrió en la programación una forma de hacer más simples y eficientes las cosas del día a día. Todo comenzó automatizando pequeñas tareas, y sin darme cuenta, terminé encontrando mi verdadera pasión.\n\nHoy me dedico al desarrollo web como fullstack developer, con un enfoque especial en el frontend. Me encanta convertir ideas en interfaces claras, útiles y agradables, cuidando cada detalle para que la tecnología se sienta cercana e intuitiva.\n\nMe considero una persona curiosa, adaptable y en constante aprendizaje. Disfruto los nuevos retos y creo que la tecnología puede transformar realidades cuando se crea con empatía y propósito.',
+      '¡Hola! Soy Jose Riascos, un ingeniero civil que descubrió en la programación una forma de hacer más simples y eficientes las cosas del día a día. <span class="important"> Todo comenzó automatizando pequeñas tareas, y sin darme cuenta, terminé encontrando mi verdadera pasión. </span>\n\nHoy <span class="important"> me dedico al desarrollo web como fullstack developer, con un enfoque especial en el frontend. </span> Me encanta convertir ideas en interfaces claras, útiles y agradables, cuidando cada detalle para que la tecnología se sienta cercana e intuitiva.\n\n<span class="important"> Me considero una persona curiosa, adaptable y en constante aprendizaje. </span> Disfruto los nuevos retos y creo que la tecnología puede transformar realidades cuando se crea con empatía y propósito.',
     downloadCV: 'Descarga mi CV',
     pageNotFound: 'Página no encontrada',
     goBackHome: 'Volver al inicio',

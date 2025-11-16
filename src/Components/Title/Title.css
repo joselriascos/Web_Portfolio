@@ -46,6 +46,7 @@
   font-size: 9em;
   color: var(--black);
   background: var(--grey);
+  filter: brightness(1.1);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: transparent 2px;
@@ -79,8 +80,8 @@
 .title > h2 {
   text-align: center;
   font-size: 3em;
-  color: var(--purple);
-  filter: blur(0.012em);
+  color: var(--light-grey);
+  filter: brightness(0.7);
   cursor: default;
   user-select: none;
   -webkit-user-select: none;
